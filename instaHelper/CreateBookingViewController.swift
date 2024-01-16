@@ -8,14 +8,20 @@
 import UIKit
 
 class CreateBookingViewController: UIViewController {
-
+    var service : String?
+    var address : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     updateUI()
         // Do any additional setup after loading the view.
     }
     
-
+func updateUI()
+    {
+        if let service  = service {
+            print("service is\(service)")
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tt6-gU-GQT">
-                                <rect key="frame" x="0.0" y="103" width="393" height="726"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Locations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxI-B2-K4y">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
@@ -31,10 +31,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-sf-vKE">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="406"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="346"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xle-Tt-i9u">
-                                                <rect key="frame" x="20" y="0.0" width="218" height="63"/>
+                                                <rect key="frame" x="20" y="141.66666666666669" width="218" height="63"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9wn-yE-FJr">
                                                         <rect key="frame" x="0.0" y="0.0" width="72.666666666666671" height="63"/>
@@ -46,6 +46,9 @@
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="🏡" cornerStyle="capsule"/>
+                                                                <connections>
+                                                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="41x-g3-YQx"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzd-s5-bM7">
                                                                 <rect key="frame" x="12.333333333333336" y="41.333333333333343" width="48" height="21.666666666666671"/>
@@ -64,6 +67,9 @@
                                                                 <buttonConfiguration key="configuration" style="filled" title="🏘️" cornerStyle="capsule">
                                                                     <color key="baseBackgroundColor" red="0.16192862643953385" green="0.76477320567495988" blue="0.98190754652023315" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ir9-Qt-8vb"/>
+                                                                </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2H-HG-IqC">
                                                                 <rect key="frame" x="11.999999999999996" y="42.666666666666686" width="48.666666666666657" height="20.333333333333329"/>
@@ -106,7 +112,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmG-At-KW0">
-                                        <rect key="frame" x="0.0" y="476" width="393" height="30"/>
+                                        <rect key="frame" x="0.0" y="416" width="393" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="VJg-Ne-49d"/>
                                         </constraints>
@@ -115,7 +121,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K4A-IN-WRx">
-                                        <rect key="frame" x="0.0" y="526" width="393" height="200"/>
+                                        <rect key="frame" x="0.0" y="466" width="393" height="200"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJH-fX-Qk9">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="61.333333333333336"/>
@@ -136,7 +142,7 @@
                                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="mXz-BF-g2F" kind="show" id="sHs-wr-zGl"/>
+                                                            <segue destination="mXz-BF-g2F" kind="show" identifier="cookService" id="sHs-wr-zGl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -153,7 +159,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-Os-Ecl">
-                                                <rect key="frame" x="0.0" y="69.333333333333371" width="393" height="61.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="69.333333333333314" width="393" height="61.333333333333343"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cleaner" translatesAutoresizingMaskIntoConstraints="NO" id="pjF-xc-Eee">
                                                         <rect key="frame" x="20" y="0.0" width="73" height="61.333333333333336"/>
@@ -170,6 +176,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="&gt;">
                                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="mXz-BF-g2F" kind="show" identifier="cleanerService" id="R4F-Dw-8TK"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -185,23 +194,26 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P24-i3-05Y">
-                                                <rect key="frame" x="0.0" y="138.66666666666663" width="393" height="61.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="138.66666666666669" width="393" height="61.333333333333343"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Driver" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-tz-OFQ">
                                                         <rect key="frame" x="20" y="0.0" width="73" height="61.333333333333336"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvc-da-t0u">
-                                                        <rect key="frame" x="113.00000000000001" y="20.666666666666742" width="45.666666666666671" height="20.333333333333329"/>
+                                                        <rect key="frame" x="113.00000000000001" y="20.666666666666629" width="45.666666666666671" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-c5-6Af">
-                                                        <rect key="frame" x="338.66666666666669" y="13.666666666666742" width="34.333333333333314" height="34.333333333333336"/>
+                                                        <rect key="frame" x="338.66666666666669" y="13.666666666666629" width="34.333333333333314" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="&gt;">
                                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="mXz-BF-g2F" kind="show" identifier="driverService" id="S2C-Xr-nhi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -249,6 +261,15 @@
                             </imageReference>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cleanerButton" destination="J6Y-bK-4jY" id="bcD-uz-cCL"/>
+                        <outlet property="cookButton" destination="2Y8-ke-SAI" id="hGP-fZ-M69"/>
+                        <outlet property="driverButton" destination="EL5-c5-6Af" id="RPv-CG-Rll"/>
+                        <outlet property="familyButton" destination="D6p-js-EoR" id="uhX-KN-J7Y"/>
+                        <outlet property="familyLabel" destination="x2H-HG-IqC" id="Mjy-O0-XMg"/>
+                        <outlet property="homeButton" destination="ezJ-P0-qbv" id="Lsi-7T-O89"/>
+                        <outlet property="homeLabel" destination="Dzd-s5-bM7" id="Pek-ab-bxN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1031,6 +1052,9 @@
             <point key="canvasLocation" x="536.64122137404581" y="733.80281690140851"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S2C-Xr-nhi"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Cleaner" width="546" height="748"/>
         <image name="Cook" width="389" height="534"/>
