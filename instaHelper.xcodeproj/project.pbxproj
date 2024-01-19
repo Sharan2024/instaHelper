@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE426142B592F330079E503 /* CommunityHelpdeskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */; };
 		2BEEDC132B51052F0032A1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC122B51052F0032A1BA /* AppDelegate.swift */; };
 		2BEEDC152B51052F0032A1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC142B51052F0032A1BA /* SceneDelegate.swift */; };
 		2BEEDC1A2B51052F0032A1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEEDC182B51052F0032A1BA /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHelpdeskViewController.swift; sourceTree = "<group>"; };
 		2BEEDC0F2B51052F0032A1BA /* instaHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEEDC122B51052F0032A1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEEDC142B51052F0032A1BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				2BEEDC302B564DAB0032A1BA /* AvailableHelperViewController.swift */,
 				2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */,
 				2BEEDC342B565D610032A1BA /* HomeScreenViewController.swift */,
+				2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */,
 			);
 			path = instaHelper;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				2BEEDC332B564DE20032A1BA /* CreateBookingViewController.swift in Sources */,
 				2BEEDC132B51052F0032A1BA /* AppDelegate.swift in Sources */,
 				2BEEDC152B51052F0032A1BA /* SceneDelegate.swift in Sources */,
+				2BE426142B592F330079E503 /* CommunityHelpdeskViewController.swift in Sources */,
 				2BEEDC312B564DAB0032A1BA /* AvailableHelperViewController.swift in Sources */,
 				2BEEDC272B5146570032A1BA /* Helper.swift in Sources */,
 				2BEEDC352B565D610032A1BA /* HomeScreenViewController.swift in Sources */,

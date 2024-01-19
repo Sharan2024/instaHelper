@@ -42,8 +42,10 @@ struct TimeSlot {
 
 // Structure to represent information about a servant
 struct Servant {
+    var id : Int
     var type: ServantType
     var name: String
+    var gender : String
     var image: String // You may use a URL or UIImage, depending on your needs
     var experience: Int
     var rating: Double
@@ -58,77 +60,85 @@ struct Servant {
 
 
 let servantA = Servant(
-    type: .cook,
-    name: "Rajni",
+    id: 1, type: .cook,
+    name: "Rajni", gender: "Female",
     image: "rajni.jpg",
     experience: 5,
     rating: 4.5,
     numberOfReviews: 20,
     workingTimeSlots: [
-        TimeSlot(startTime: "9:00 AM", endTime: "11:00 AM", house: "House 1"),
-        TimeSlot(startTime: "11:15 AM", endTime: "12:30 PM", house: "House 2"),
-        TimeSlot(startTime: "6:15 PM", endTime: "8:30 PM", house: "House 13"),
+        TimeSlot(startTime: "9:00", endTime: "10:00", house: "Anish Gupta"),
+        TimeSlot(startTime: "10:00", endTime: "11:00", house: "NA") ,
+        TimeSlot(startTime: "11:15", endTime: "12:30", house: "Anita Singla"),
+        TimeSlot(startTime: "16:30", endTime: "18:00", house: "NA") ,
+        TimeSlot(startTime: "18:15", endTime: "20:30", house: "Vikas Goyal"),
        
     ],
     cookDetails: (.veg, ["Italian", "Indian"])
 )
 
 let servantB = Servant(
-    type: .cleaner,
-    name: "Mandeep",
+    id: 2, type: .cleaner,
+    name: "Mandeep", gender: "Female",
     image: "mandeep.jpg",
     experience: 3,
     rating: 4.0,
     numberOfReviews: 15,
     workingTimeSlots: [
-        TimeSlot(startTime: "10:30 AM", endTime: "1:00 PM", house: "House 3"),
-        TimeSlot(startTime: "2:00 PM", endTime: "4:30 PM", house: "House 1"),
-        TimeSlot(startTime: "6:00 PM", endTime: "7:30 PM", house: "House 13"),
+        TimeSlot(startTime: "9:00", endTime: "10:30", house: "NA"),
+        TimeSlot(startTime: "10:30", endTime: "13:00", house: "Anita Singla"),
+        TimeSlot(startTime: "14:00", endTime: "16:30", house: "Anish Gupta"),
+        TimeSlot(startTime: "18:00", endTime: "19:30", house: "Vikas Goyal"),
         
     ],
     cleanerDetails: [.washrooms, .basicCleaning, .kitchenCleaning]
 )
 
 let servantC = Servant(
-    type: .driver,
-    name: "Ankush",
+    id: 3, type: .driver,
+    name: "Ankush", gender: "Male",
     image: "ankush.jpg",
     experience: 7,
     rating: 4.8,
     numberOfReviews: 30,
     workingTimeSlots: [
-        TimeSlot(startTime: "8:00 AM", endTime: "10:00 AM", house: "House 4"),
-        TimeSlot(startTime: "1:00 PM", endTime: "3:30 PM", house: "House 5"),
-        // Add more time slots as needed
+        TimeSlot(startTime: "8:00", endTime: "10:00", house: "Shikha"),
+        TimeSlot(startTime: "10:00", endTime: "12:00", house: "NA"),
+        TimeSlot(startTime: "13:00", endTime: "15:30", house: "Anish Gupta"),
+       
     ],
     driverDetails: (.outsideCity, "Sedan")
 )
 let servantD = Servant(
-    type: .driver,
-    name: "Ramu",
+    id: 4, type: .driver,
+    name: "Ramu", gender: "Male",
     image: "Ramu.jpg",
     experience: 7,
     rating: 4.8,
     numberOfReviews: 30,
     workingTimeSlots: [
-        TimeSlot(startTime: "9:00 AM", endTime: "11:00 AM", house: "House 6"),
-        TimeSlot(startTime: "1:00 PM", endTime: "3:30 PM", house: "House 8"),
+        TimeSlot(startTime: "9:00", endTime: "11:00", house: "Amanpreet Singh"),
+        TimeSlot(startTime: "11:00", endTime: "12:30", house: "NA"),
+        TimeSlot(startTime: "13:00", endTime: "15:30", house: "Manmeet Kaur"),
        
     ],
     driverDetails: (.both, "Sedan")
 )
 let servantE = Servant(
-    type: .cook,
-    name: "Shabham",
+    id: 5, type: .cook,
+    name: "Shabham", gender: "Female",
     image: "shabham.jpg",
     experience: 5,
     rating: 4.5,
     numberOfReviews: 20,
     workingTimeSlots: [
-        TimeSlot(startTime: "9:00 AM", endTime: "11:00 AM", house: "House 9"),
-        TimeSlot(startTime: "11:15 AM", endTime: "12:30 PM", house: "House 10"),
-        TimeSlot(startTime: "5:15 PM", endTime: "7:30 PM", house: "House 11"),
+        TimeSlot(startTime: "8:00", endTime: "10:00", house: "Shanky Goya"),
+        TimeSlot(startTime: "10:00", endTime: "11:00", house: "NA"),
+        TimeSlot(startTime: "11:15", endTime: "12:30", house: "Manmeet Kaur"),
+        TimeSlot(startTime: "16:00", endTime: "17:00", house: "NA"),
+        TimeSlot(startTime: "17:15", endTime: "19:30", house: "Anupinder Singh"),
        
     ],
     cookDetails: (.veg, ["Italian", "Indian", "South Indian"])
 )
+let servants : [Servant] = [servantA , servantB , servantC , servantD , servantE]
