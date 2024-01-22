@@ -7,12 +7,15 @@
 
 import UIKit
 class PendingBookingsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , YourCellDelegate{
+    var finaldata = ""
     func didSelectCell(with data: String) {
-        let destinationViewController = RequestStatusViewController()
-        destinationViewController.status = data
-        navigationController?.pushViewController(destinationViewController, animated: true)
+          finaldata = data
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? RequestStatusViewController {
+            destinationViewController.status = finaldata
+        }
+    }
     var servantId : Int = 1;
     
     @IBOutlet weak var bookingStatusSegmentedControl: UISegmentedControl!

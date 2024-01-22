@@ -36,13 +36,11 @@ class PendingBookTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
 
-               if selected {
-                   // Get the status or any other data you want to pass
-                   let status = statusofBookingLabel.text ?? ""
-                   
-                   // Notify the delegate (which is the view controller)
-                   delegate?.didSelectCell(with: status)
-               }
+        // Get the status or any other data you want to pass
+               let status = statusofBookingLabel.text ?? ""
+               
+               // Notify the delegate (which is the view controller)
+               delegate?.didSelectCell(with: status)
            }
     
     func update(with servant: Int) {

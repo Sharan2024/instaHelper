@@ -12,16 +12,21 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     @IBOutlet weak var displayStatusWiseServantTable: UITableView!
     
     var status : String?
-    let approvedRequests = requestedServant.filter { $0.status.lowercased() == "approved" }
+   var finalStatus = ""
+    var approvedRequests: [requests] = []
+
+   // let approvedRequests = requestedServant.filter { $0.status.lowercased() == "approved" }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         approvedRequests.count
     
     }
-    
+    func updateApprovedRequests() {
+        approvedRequests = requestedServant.filter { $0.status.lowercased() == finalStatus.lowercased() }
+       }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RequestStatusCell", for: indexPath) as! StatusWiseHelpersTableViewCell
-        let ids = requestedServant.map { $0.id }
+        let ids = approvedRequests.map { $0.id }
      let servant = ids[indexPath.row]
         
        cell.update(with: servant)
@@ -31,13 +36,15 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
 
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let status {
+            finalStatus = status
+        }
+        updateApprovedRequests()
        displayStatusWiseServantTable.dataSource =  self
         displayStatusWiseServantTable.delegate = self
-       print("Hi")
+       print(finalStatus)
         
 
     }
