@@ -13,12 +13,12 @@ enum ServantType: String {
     case cleaner = "Cleaner"
     case driver = "Driver"
 }
-// Enum for food types (for cooks)
+// Enum for food types
 enum FoodType: String {
     case veg = "Vegetarian"
     case nonVeg = "Non-Vegetarian"
 }
-// Enum for cleaning services (for cleaners)
+// Enum for cleaning
 enum CleaningService: String {
     case washrooms = "Washrooms"
     case basicCleaning = "Basic Cleaning"
@@ -26,7 +26,7 @@ enum CleaningService: String {
     case gardenCleaning = "Garden Cleaning"
 }
 
-// Enum for driving capabilities (for drivers)
+// Enum for driviers
 enum DrivingCapability: String {
     case city = "City"
     case outsideCity = "Outside City"
@@ -40,19 +40,19 @@ struct TimeSlot {
     var house: String
 }
 
-// Structure to represent information about a servant
+// Structure to represent data of a servant
 struct Servant {
     var id : Int
     var type: ServantType
     var name: String
     var gender : String
-    var image: String // You may use a URL or UIImage, depending on your needs
+    var image: String
     var experience: Int
     var rating: Double
     var numberOfReviews: Int
     var workingTimeSlots: [TimeSlot]
 
-    // Additional data based on servant type
+  
     var cookDetails: (foodType: FoodType, specialties: [String])?
     var cleanerDetails: [CleaningService]?
     var driverDetails: (capability: DrivingCapability, vehicleType: String)?
@@ -133,7 +133,7 @@ let servantE = Servant(
     numberOfReviews: 20,
     workingTimeSlots: [
         TimeSlot(startTime: "8:00", endTime: "10:00", house: "Shanky Goya"),
-        TimeSlot(startTime: "10:00", endTime: "11:00", house: "NA"),
+        TimeSlot(startTime: "12:00", endTime: "11:00", house: "NA"),
         TimeSlot(startTime: "11:15", endTime: "12:30", house: "Manmeet Kaur"),
         TimeSlot(startTime: "16:00", endTime: "17:00", house: "NA"),
         TimeSlot(startTime: "17:15", endTime: "19:30", house: "Anupinder Singh"),

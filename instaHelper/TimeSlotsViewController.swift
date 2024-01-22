@@ -9,12 +9,12 @@ import UIKit
 
 class TimeSlotsViewController: UIViewController {
 
-    var servant : Int = 1;
+    var servantID : Int = 1
     @IBOutlet weak var buttonScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let selectedServant = servants.first { $0.id == servant }
+        let selectedServant = servants.first { $0.id == servantID }
         
         // Create buttons based on the selected servant's working time slots
         if let selectedServant = selectedServant {

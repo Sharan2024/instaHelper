@@ -8,8 +8,9 @@
 import UIKit
 
 class AvailableHelperViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
-    var servant : [Int] = [1,5]
-    
+    var avaiableServant : [Servant] = []
+    var servant : [Int] = []
+
     @IBOutlet weak var displayHelperTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,12 +34,23 @@ class AvailableHelperViewController: UIViewController , UITableViewDelegate , UI
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         displayHelperTable.dataSource =  self
         displayHelperTable.delegate = self
-        // Do any additional setup after loading the view.
+        
         
     }
-    
+    func updateUI() {
+        if !avaiableServant.isEmpty {
+           // print("Available servants:")
+            for helper in avaiableServant {
+                
+              //  print("Servant ID: \(helper.id), Name: \(helper.name)")
+                servant.append(helper.id)
+                
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

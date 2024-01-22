@@ -20,6 +20,13 @@
 		2BEEDC312B564DAB0032A1BA /* AvailableHelperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC302B564DAB0032A1BA /* AvailableHelperViewController.swift */; };
 		2BEEDC332B564DE20032A1BA /* CreateBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */; };
 		2BEEDC352B565D610032A1BA /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC342B565D610032A1BA /* HomeScreenViewController.swift */; };
+		2BFCFAF12B5A429D005D99D4 /* PendingBookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF02B5A429D005D99D4 /* PendingBookingsViewController.swift */; };
+		2BFCFAF32B5A43AE005D99D4 /* PendingBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF22B5A43AE005D99D4 /* PendingBookTableViewCell.swift */; };
+		2BFCFAF52B5A441C005D99D4 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF42B5A441C005D99D4 /* request.swift */; };
+		2BFCFAF72B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF62B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift */; };
+		2BFCFAF92B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */; };
+		2BFCFAFB2B5E1AC9005D99D4 /* RequestStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */; };
+		2BFCFAFD2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		2BEEDC302B564DAB0032A1BA /* AvailableHelperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableHelperViewController.swift; sourceTree = "<group>"; };
 		2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookingViewController.swift; sourceTree = "<group>"; };
 		2BEEDC342B565D610032A1BA /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		2BFCFAF02B5A429D005D99D4 /* PendingBookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBookingsViewController.swift; sourceTree = "<group>"; };
+		2BFCFAF22B5A43AE005D99D4 /* PendingBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBookTableViewCell.swift; sourceTree = "<group>"; };
+		2BFCFAF42B5A441C005D99D4 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		2BFCFAF62B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedBookingTableViewCell.swift; sourceTree = "<group>"; };
+		2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReceivedTableViewCell.swift; sourceTree = "<group>"; };
+		2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusViewController.swift; sourceTree = "<group>"; };
+		2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusWiseHelpersTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,10 @@
 		2BEEDC112B51052F0032A1BA /* instaHelper */ = {
 			isa = PBXGroup;
 			children = (
+				2BFCFAF02B5A429D005D99D4 /* PendingBookingsViewController.swift */,
+				2BFCFAF62B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift */,
+				2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */,
+				2BFCFAF22B5A43AE005D99D4 /* PendingBookTableViewCell.swift */,
 				2BEEDC122B51052F0032A1BA /* AppDelegate.swift */,
 				2BEEDC2C2B5194F30032A1BA /* TimeSlotsViewController.swift */,
 				2BEEDC142B51052F0032A1BA /* SceneDelegate.swift */,
@@ -84,6 +102,9 @@
 				2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */,
 				2BEEDC342B565D610032A1BA /* HomeScreenViewController.swift */,
 				2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */,
+				2BFCFAF42B5A441C005D99D4 /* request.swift */,
+				2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */,
+				2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */,
 			);
 			path = instaHelper;
 			sourceTree = "<group>";
@@ -161,13 +182,20 @@
 			files = (
 				2BEEDC2D2B5194F30032A1BA /* TimeSlotsViewController.swift in Sources */,
 				2BEEDC2F2B54DEFD0032A1BA /* Residents.swift in Sources */,
+				2BFCFAF92B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift in Sources */,
 				2BEEDC292B514AE00032A1BA /* AvailableHelperTableViewCell.swift in Sources */,
 				2BEEDC332B564DE20032A1BA /* CreateBookingViewController.swift in Sources */,
+				2BFCFAF52B5A441C005D99D4 /* request.swift in Sources */,
 				2BEEDC132B51052F0032A1BA /* AppDelegate.swift in Sources */,
 				2BEEDC152B51052F0032A1BA /* SceneDelegate.swift in Sources */,
+				2BFCFAFB2B5E1AC9005D99D4 /* RequestStatusViewController.swift in Sources */,
+				2BFCFAF72B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift in Sources */,
 				2BE426142B592F330079E503 /* CommunityHelpdeskViewController.swift in Sources */,
+				2BFCFAFD2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift in Sources */,
 				2BEEDC312B564DAB0032A1BA /* AvailableHelperViewController.swift in Sources */,
+				2BFCFAF32B5A43AE005D99D4 /* PendingBookTableViewCell.swift in Sources */,
 				2BEEDC272B5146570032A1BA /* Helper.swift in Sources */,
+				2BFCFAF12B5A429D005D99D4 /* PendingBookingsViewController.swift in Sources */,
 				2BEEDC352B565D610032A1BA /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

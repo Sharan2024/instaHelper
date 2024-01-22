@@ -22,6 +22,7 @@ class AvailableHelperTableViewCell: UITableViewCell {
     
     @IBOutlet weak var reviewsOfHelper: UILabel!
     
+    var servantId = 0;
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,7 @@ class AvailableHelperTableViewCell: UITableViewCell {
     }
    
  func update(with servant: Int) {
+     servantId = servant
      nameofHelper.text = servants.first{ $0.id == servant}?.name
      let reviews: Int? = servants.first{ $0.id == servant}?.numberOfReviews
      if let reviews {
@@ -69,7 +71,17 @@ class AvailableHelperTableViewCell: UITableViewCell {
 
 }
    
-
+//    @IBAction func viewScheduleButtonTapped(_ sender: Any) {
+//        
+//       print("view")
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//       let viewVC = segue.destination as! TimeSlotsViewController
+//    guard let sender = sender as? UIButton else {return}
+//        viewVC.servantID = servantId
+//        
+//    }
+    
     
 
 }

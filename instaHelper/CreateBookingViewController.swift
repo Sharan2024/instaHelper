@@ -10,7 +10,7 @@ import UIKit
 class CreateBookingViewController: UIViewController {
     var service : String?
     var address : String?
-    
+   var availableServants : [Servant] = []
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var timePicker: UIDatePicker!
@@ -31,7 +31,10 @@ class CreateBookingViewController: UIViewController {
 func updateUI()
     {
         if let service  = service {
-            print("service is\(service)")
+            print("Service is\(service)")
+        }
+        if let address  = address {
+            print("Address is\(address)")
         }
     }
     /*
@@ -65,16 +68,25 @@ func updateUI()
 
         let formattedTime = timeFormatter.string(from: selectedTime)
         let offer = offerPriceTextField.text
-        let availableServants = findAvailableServants(selectedTime: formattedTime, selectedService: service!)
+      availableServants = findAvailableServants(selectedTime: formattedTime, selectedService: service!)
         if !availableServants.isEmpty {
             print("Available servants:")
             for servant in availableServants {
+                
                 print("Servant ID: \(servant.id), Name: \(servant.name)")
+                
             }
         } else {
             print("No available servants for the selected time and service.")
         }
+        
     
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       let nextVC = segue.destination as! AvailableHelperViewController
+    guard let sender = sender as? UIButton else {return}
+        nextVC.avaiableServant = availableServants
+        
     }
     func findAvailableServants(selectedTime: String, selectedService: String) -> [Servant] {
         var availableServants: [Servant] = []
