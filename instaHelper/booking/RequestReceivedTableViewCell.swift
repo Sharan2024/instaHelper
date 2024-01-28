@@ -28,10 +28,16 @@ class RequestReceivedTableViewCell: UITableViewCell {
        
     }
     func update(with servant: Int) {
-        
-        nameOfServantLabel.text = receivedRequestBooking.first{ $0.id == servant}?.name
-        requesterNameLabel.text = receivedRequestBooking.first{ $0.id == servant}?.RequesterName
-        dateandTimeLabel.text = receivedRequestBooking.first{ $0.id == servant}?.dateandTime
+        guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
+                print("Resident not found.")
+                return
+            }
+            let booking = resident.receivedBooking.first { $0.id == servant }
+            
+            nameOfServantLabel.text = booking?.name
+        requesterNameLabel.text = "Requested By :" + (booking!.RequesterName)
+            dateandTimeLabel.text = booking?.dateandTime
+
      //   statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
        
 

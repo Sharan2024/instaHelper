@@ -33,15 +33,14 @@ class ConfirmedBookingTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func update(with servant: Int) {
+    func update(booking: confirmedBookings) {
         
-        nameofServantLabel.text = bookedServant.first{ $0.id == servant}?.name
-        serviceLabel.text = service
-        locationLabel.text = "📍" + address
-        priceOfServiceLabel.text = bookedServant.first{ $0.id == servant}?.price
-        dateandTimeLabel.text = bookedServant.first{ $0.id == servant}?.dateandTime
-     //   statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
-       
+        nameofServantLabel.text = booking.name
+               // Update other labels using the properties of the `confirmedBookings` instance
+               serviceLabel.text = "Cook"  // Example value, update accordingly
+               locationLabel.text = "📍" + booking.address
+               priceOfServiceLabel.text = booking.price
+               dateandTimeLabel.text = booking.dateandTime
 
    }
 

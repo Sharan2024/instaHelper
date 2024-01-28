@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B933F222B62178B004746AA /* DetailsOfServantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B933F212B62178B004746AA /* DetailsOfServantTableViewController.swift */; };
+		2BCDDE5C2B62B86200671E24 /* ReceivedRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDDE5B2B62B86200671E24 /* ReceivedRequestsViewController.swift */; };
+		2BCDDE5E2B62B9F400671E24 /* NewReceivedRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDDE5D2B62B9F400671E24 /* NewReceivedRequestTableViewCell.swift */; };
+		2BCDDE662B64DCCF00671E24 /* AddressFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDDE652B64DCCF00671E24 /* AddressFile.swift */; };
+		2BCDDE682B64ED3500671E24 /* FinalHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDDE672B64ED3500671E24 /* FinalHomeViewController.swift */; };
 		2BE426142B592F330079E503 /* CommunityHelpdeskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */; };
 		2BEEDC132B51052F0032A1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC122B51052F0032A1BA /* AppDelegate.swift */; };
 		2BEEDC152B51052F0032A1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDC142B51052F0032A1BA /* SceneDelegate.swift */; };
@@ -27,9 +32,18 @@
 		2BFCFAF92B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */; };
 		2BFCFAFB2B5E1AC9005D99D4 /* RequestStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */; };
 		2BFCFAFD2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */; };
+		2BFCFB1F2B5F78E8005D99D4 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFB1E2B5F78E8005D99D4 /* AddPostViewController.swift */; };
+		2BFCFB212B5F7C22005D99D4 /* HelpdeskPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFB202B5F7C22005D99D4 /* HelpdeskPost.swift */; };
+		2BFCFB232B5FBC25005D99D4 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFB222B5FBC25005D99D4 /* Address.swift */; };
+		2BFCFB252B5FBD88005D99D4 /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFCFB242B5FBD88005D99D4 /* AddNewAddressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B933F212B62178B004746AA /* DetailsOfServantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOfServantTableViewController.swift; sourceTree = "<group>"; };
+		2BCDDE5B2B62B86200671E24 /* ReceivedRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedRequestsViewController.swift; sourceTree = "<group>"; };
+		2BCDDE5D2B62B9F400671E24 /* NewReceivedRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceivedRequestTableViewCell.swift; sourceTree = "<group>"; };
+		2BCDDE652B64DCCF00671E24 /* AddressFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFile.swift; sourceTree = "<group>"; };
+		2BCDDE672B64ED3500671E24 /* FinalHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalHomeViewController.swift; sourceTree = "<group>"; };
 		2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityHelpdeskViewController.swift; sourceTree = "<group>"; };
 		2BEEDC0F2B51052F0032A1BA /* instaHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEEDC122B51052F0032A1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +66,10 @@
 		2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReceivedTableViewCell.swift; sourceTree = "<group>"; };
 		2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatusViewController.swift; sourceTree = "<group>"; };
 		2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusWiseHelpersTableViewCell.swift; sourceTree = "<group>"; };
+		2BFCFB1E2B5F78E8005D99D4 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		2BFCFB202B5F7C22005D99D4 /* HelpdeskPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpdeskPost.swift; sourceTree = "<group>"; };
+		2BFCFB222B5FBC25005D99D4 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		2BFCFB242B5FBD88005D99D4 /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +83,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BCDDE5F2B63764F00671E24 /* booking */ = {
+			isa = PBXGroup;
+			children = (
+				2BFCFAF62B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift */,
+				2BFCFAF02B5A429D005D99D4 /* PendingBookingsViewController.swift */,
+				2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */,
+				2BFCFAF22B5A43AE005D99D4 /* PendingBookTableViewCell.swift */,
+				2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */,
+				2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */,
+			);
+			path = booking;
+			sourceTree = "<group>";
+		};
+		2BCDDE602B63767E00671E24 /* address */ = {
+			isa = PBXGroup;
+			children = (
+				2BFCFB242B5FBD88005D99D4 /* AddNewAddressViewController.swift */,
+			);
+			path = address;
+			sourceTree = "<group>";
+		};
+		2BCDDE612B63769200671E24 /* available helper */ = {
+			isa = PBXGroup;
+			children = (
+				2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */,
+				2BEEDC302B564DAB0032A1BA /* AvailableHelperViewController.swift */,
+				2BEEDC282B514AE00032A1BA /* AvailableHelperTableViewCell.swift */,
+				2BEEDC2C2B5194F30032A1BA /* TimeSlotsViewController.swift */,
+			);
+			path = "available helper";
+			sourceTree = "<group>";
+		};
+		2BCDDE622B6376CA00671E24 /* received requests */ = {
+			isa = PBXGroup;
+			children = (
+				2BCDDE5B2B62B86200671E24 /* ReceivedRequestsViewController.swift */,
+				2BCDDE5D2B62B9F400671E24 /* NewReceivedRequestTableViewCell.swift */,
+			);
+			path = "received requests";
+			sourceTree = "<group>";
+		};
+		2BCDDE632B6376E600671E24 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2BEEDC2E2B54DEFD0032A1BA /* Residents.swift */,
+				2BEEDC262B5146570032A1BA /* Helper.swift */,
+				2BFCFB222B5FBC25005D99D4 /* Address.swift */,
+				2BFCFAF42B5A441C005D99D4 /* request.swift */,
+				2BFCFB202B5F7C22005D99D4 /* HelpdeskPost.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		2BCDDE642B63775400671E24 /* community */ = {
+			isa = PBXGroup;
+			children = (
+				2BFCFB1E2B5F78E8005D99D4 /* AddPostViewController.swift */,
+				2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */,
+			);
+			path = community;
+			sourceTree = "<group>";
+		};
 		2BEEDC062B51052F0032A1BA = {
 			isa = PBXGroup;
 			children = (
@@ -84,27 +164,22 @@
 		2BEEDC112B51052F0032A1BA /* instaHelper */ = {
 			isa = PBXGroup;
 			children = (
-				2BFCFAF02B5A429D005D99D4 /* PendingBookingsViewController.swift */,
-				2BFCFAF62B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift */,
-				2BFCFAF82B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift */,
-				2BFCFAF22B5A43AE005D99D4 /* PendingBookTableViewCell.swift */,
+				2BCDDE642B63775400671E24 /* community */,
+				2BCDDE632B6376E600671E24 /* models */,
+				2BCDDE622B6376CA00671E24 /* received requests */,
+				2BCDDE612B63769200671E24 /* available helper */,
+				2BCDDE602B63767E00671E24 /* address */,
+				2BCDDE5F2B63764F00671E24 /* booking */,
 				2BEEDC122B51052F0032A1BA /* AppDelegate.swift */,
-				2BEEDC2C2B5194F30032A1BA /* TimeSlotsViewController.swift */,
 				2BEEDC142B51052F0032A1BA /* SceneDelegate.swift */,
 				2BEEDC182B51052F0032A1BA /* Main.storyboard */,
-				2BEEDC2E2B54DEFD0032A1BA /* Residents.swift */,
+				2B933F212B62178B004746AA /* DetailsOfServantTableViewController.swift */,
 				2BEEDC1B2B5105300032A1BA /* Assets.xcassets */,
 				2BEEDC1D2B5105300032A1BA /* LaunchScreen.storyboard */,
 				2BEEDC202B5105300032A1BA /* Info.plist */,
-				2BEEDC262B5146570032A1BA /* Helper.swift */,
-				2BEEDC282B514AE00032A1BA /* AvailableHelperTableViewCell.swift */,
-				2BEEDC302B564DAB0032A1BA /* AvailableHelperViewController.swift */,
-				2BEEDC322B564DE20032A1BA /* CreateBookingViewController.swift */,
 				2BEEDC342B565D610032A1BA /* HomeScreenViewController.swift */,
-				2BE426132B592F330079E503 /* CommunityHelpdeskViewController.swift */,
-				2BFCFAF42B5A441C005D99D4 /* request.swift */,
-				2BFCFAFA2B5E1AC9005D99D4 /* RequestStatusViewController.swift */,
-				2BFCFAFC2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift */,
+				2BCDDE652B64DCCF00671E24 /* AddressFile.swift */,
+				2BCDDE672B64ED3500671E24 /* FinalHomeViewController.swift */,
 			);
 			path = instaHelper;
 			sourceTree = "<group>";
@@ -181,20 +256,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEEDC2D2B5194F30032A1BA /* TimeSlotsViewController.swift in Sources */,
+				2B933F222B62178B004746AA /* DetailsOfServantTableViewController.swift in Sources */,
 				2BEEDC2F2B54DEFD0032A1BA /* Residents.swift in Sources */,
 				2BFCFAF92B5A61ED005D99D4 /* RequestReceivedTableViewCell.swift in Sources */,
 				2BEEDC292B514AE00032A1BA /* AvailableHelperTableViewCell.swift in Sources */,
 				2BEEDC332B564DE20032A1BA /* CreateBookingViewController.swift in Sources */,
+				2BCDDE682B64ED3500671E24 /* FinalHomeViewController.swift in Sources */,
 				2BFCFAF52B5A441C005D99D4 /* request.swift in Sources */,
+				2BFCFB212B5F7C22005D99D4 /* HelpdeskPost.swift in Sources */,
 				2BEEDC132B51052F0032A1BA /* AppDelegate.swift in Sources */,
 				2BEEDC152B51052F0032A1BA /* SceneDelegate.swift in Sources */,
 				2BFCFAFB2B5E1AC9005D99D4 /* RequestStatusViewController.swift in Sources */,
 				2BFCFAF72B5A5445005D99D4 /* ConfirmedBookingTableViewCell.swift in Sources */,
+				2BFCFB252B5FBD88005D99D4 /* AddNewAddressViewController.swift in Sources */,
+				2BCDDE5E2B62B9F400671E24 /* NewReceivedRequestTableViewCell.swift in Sources */,
+				2BFCFB1F2B5F78E8005D99D4 /* AddPostViewController.swift in Sources */,
 				2BE426142B592F330079E503 /* CommunityHelpdeskViewController.swift in Sources */,
 				2BFCFAFD2B5E21A6005D99D4 /* StatusWiseHelpersTableViewCell.swift in Sources */,
+				2BFCFB232B5FBC25005D99D4 /* Address.swift in Sources */,
+				2BCDDE662B64DCCF00671E24 /* AddressFile.swift in Sources */,
 				2BEEDC312B564DAB0032A1BA /* AvailableHelperViewController.swift in Sources */,
 				2BFCFAF32B5A43AE005D99D4 /* PendingBookTableViewCell.swift in Sources */,
 				2BEEDC272B5146570032A1BA /* Helper.swift in Sources */,
+				2BCDDE5C2B62B86200671E24 /* ReceivedRequestsViewController.swift in Sources */,
 				2BFCFAF12B5A429D005D99D4 /* PendingBookingsViewController.swift in Sources */,
 				2BEEDC352B565D610032A1BA /* HomeScreenViewController.swift in Sources */,
 			);
@@ -348,6 +432,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y42PJ5JYLU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = instaHelper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -375,6 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y42PJ5JYLU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = instaHelper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

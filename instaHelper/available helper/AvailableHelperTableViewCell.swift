@@ -7,8 +7,14 @@
 
 import UIKit
 
-class AvailableHelperTableViewCell: UITableViewCell {
+protocol DetailsDelegate: AnyObject {
+    func didSelectCell(with data: Int)
+}
 
+class AvailableHelperTableViewCell: UITableViewCell {
+   
+    weak var delegate: DetailsDelegate?
+    
     @IBOutlet weak var helperImage: UIImageView!
     
     @IBOutlet weak var experienceofHelper: UILabel!
@@ -31,8 +37,8 @@ class AvailableHelperTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+     print("Delegate \(servantId)")
+        delegate?.didSelectCell(with: servantId)
     }
    
  func update(with servant: Int) {
@@ -73,12 +79,12 @@ class AvailableHelperTableViewCell: UITableViewCell {
    
 //    @IBAction func viewScheduleButtonTapped(_ sender: Any) {
 //        
-//       print("view")
+//       print("view schedule")
 //    }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //       let viewVC = segue.destination as! TimeSlotsViewController
 //    guard let sender = sender as? UIButton else {return}
-//        viewVC.servantID = servantId
+//       // viewVC.servantID = servantId
 //        
 //    }
     

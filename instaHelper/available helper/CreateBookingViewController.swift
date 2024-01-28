@@ -20,12 +20,12 @@ class CreateBookingViewController: UIViewController {
     @IBOutlet weak var numberOfHoursStepper: UIStepper!
     
     @IBOutlet weak var offerPriceTextField: UITextField!
-    
+    var selectdate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
      updateUI()
-        // Do any additional setup after loading the view.
+      
     }
     
 func updateUI()
@@ -54,12 +54,13 @@ func updateUI()
     }
     
     @IBAction func findHelperButtonTapper(_ sender: Any) {
-        let selectedDate = datePicker.date
+       var selectedDate = datePicker.date
       //  print(selectedDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let formattedDate = dateFormatter.string(from: selectedDate)
        // print(formattedDate)
+        selectdate = formattedDate
         let selectedTime = timePicker.date
 
         // Use a DateFormatter to display only the time component
@@ -86,6 +87,8 @@ func updateUI()
        let nextVC = segue.destination as! AvailableHelperViewController
     guard let sender = sender as? UIButton else {return}
         nextVC.avaiableServant = availableServants
+        nextVC.date = selectdate
+        nextVC.cost = offerPriceTextField.text!
         
     }
     func findAvailableServants(selectedTime: String, selectedService: String) -> [Servant] {
@@ -98,7 +101,7 @@ func updateUI()
                     continue
                 }
                     for timeSlot in servant.workingTimeSlots {
-                        if timeSlot.house.lowercased() == "na", selectedTime == timeSlot.startTime
+                        if timeSlot.membershipID.lowercased() == "na", selectedTime == timeSlot.startTime
                             {
                             availableServants.append(servant)
                             break

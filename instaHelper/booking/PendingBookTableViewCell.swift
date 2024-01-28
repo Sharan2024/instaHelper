@@ -43,17 +43,20 @@ class PendingBookTableViewCell: UITableViewCell {
                delegate?.didSelectCell(with: status)
            }
     
-    func update(with servant: Int) {
+    func update(with request: BookingRequested) {
+           nameofServantLabel.text = request.name
+           serviceLabel.text = service
+           locationLabel.text = "📍" + request.address
+           priceOfServiceLabel.text = request.price
+           dateandTimeLabel.text = request.dateandTime
         
-        nameofServantLabel.text = requestedServant.first{ $0.id == servant}?.name
-        serviceLabel.text = service
-        locationLabel.text = "📍" + address
-        priceOfServiceLabel.text = requestedServant.first{ $0.id == servant}?.price
-        dateandTimeLabel.text = requestedServant.first{ $0.id == servant}?.dateandTime
-        statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
-       
-
-   }
+           statusofBookingLabel.text = request.status
+        if statusofBookingLabel.text == "Approved" {
+            statusofBookingLabel.textColor = .green
+        } else {
+            statusofBookingLabel.textColor = .red
+        }
+       }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //       let nextVC = segue.destination as! AvailableHelperViewController
 //    guard let sender = sender as? UIButton else {return}

@@ -13,7 +13,7 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     
     var status : String?
    var finalStatus = ""
-    var approvedRequests: [requests] = []
+    var approvedRequests: [BookingRequested] = []
 
    // let approvedRequests = requestedServant.filter { $0.status.lowercased() == "approved" }
 
@@ -22,7 +22,7 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     
     }
     func updateApprovedRequests() {
-        approvedRequests = requestedServant.filter { $0.status.lowercased() == finalStatus.lowercased() }
+       approvedRequests = requestedServant.filter { $0.status.lowercased() == finalStatus.lowercased() }
        }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RequestStatusCell", for: indexPath) as! StatusWiseHelpersTableViewCell
@@ -47,5 +47,14 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
        print(finalStatus)
         
 
+    }
+    @objc func showDialog() {
+        let alertController = UIAlertController(title: "Confirmation", message: "Your booking has been confirmed", preferredStyle: .alert)
+        // Add actions to the alert controller
+        let okAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            // Handle OK button tap if needed
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }

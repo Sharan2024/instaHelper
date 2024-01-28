@@ -10,7 +10,7 @@ import UIKit
 class StatusWiseHelpersTableViewCell: UITableViewCell {
 
    // @IBOutlet weak var helperImage: UIImageView!
-    
+    var id : Int? = 0;
     
     @IBOutlet weak var NameOfServant: UILabel!
     
@@ -35,7 +35,7 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func update(with servant: Int) {
-        
+         id =  servant
         NameOfServant.text = requestedServant.first{ $0.id == servant}?.name
         let experience: Int? = requestedServant.first{ $0.id == servant}?.experience
         if let experience {
@@ -65,9 +65,41 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
    }
     
     @IBAction func confirmButtonTapped(_ sender: Any) {
+        guard let servantID = id  else {
+                    return
+                }
+
+                // Create the alert controller
+                let alertController = UIAlertController(title: "Confirm Booking", message: "Are you sure you want to confirm this booking?", preferredStyle: .alert)
+
+                // Create actions for the alert controller
+                let confirmAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] (action) in
+                    self?.handleConfirmation(for: servantID)
+                }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+                if let viewController = findViewController() {
+                    viewController.present(alertController, animated: true, completion: nil)
+                }
+
+        
     }
-    
-    
+    private func handleConfirmation(for servantID: Int) {
+
+           print("Booking confirmed for servant ID: \(servantID)")
+       }
+
+       private func findViewController() -> UIViewController? {
+           var responder: UIResponder? = self
+           while let nextResponder = responder?.next {
+               if let viewController = nextResponder as? UIViewController {
+                   return viewController
+               }
+               responder = nextResponder
+           }
+           return nil
+       }
     @IBAction func declineButtonTapped(_ sender: Any) {
         
     }

@@ -7,10 +7,25 @@
 
 import UIKit
 
-class AvailableHelperViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class AvailableHelperViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , DetailsDelegate {
+    var finalId : Int = 0
+    var date : String = ""
+    var cost : String = ""
+    func didSelectCell(with data: Int) {
+        finalId = data
+    }
+  
     var avaiableServant : [Servant] = []
     var servant : [Int] = []
-
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? TimeSlotsViewController {
+            print(finalId)
+            destinationViewController.servantID = finalId
+            destinationViewController.date = date
+            destinationViewController.cost = cost
+        }
+    }
     @IBOutlet weak var displayHelperTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,14 +39,13 @@ class AvailableHelperViewController: UIViewController , UITableViewDelegate , UI
         
         cell.update(with: servant)
         cell.showsReorderControl = true
-
-        // Configure the cell...
+        cell.delegate = self
+      //  cell.accessoryType = .detailDisclosureButton
 
         return cell
 
     }
-    
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()

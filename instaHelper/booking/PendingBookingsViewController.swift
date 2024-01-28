@@ -36,11 +36,17 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
        
         switch bookingStatusSegmentedControl.selectedSegmentIndex {
         case 0:
-                return bookedServant.count
+            return ConfirmedBookingsDataModel().getAllConfirmedBookings().count
         case 1:
-                return requestedServant.count
-        case 2:
-            return receivedRequestBooking.count
+            return requestsDataModel.getAllRequests().count
+//        case 2:
+//            guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
+//                       print("Resident not found.")
+//                       return 0
+//                   }
+//                   
+//                   // Return the number of received bookings for the resident
+//                   return resident.receivedBooking.count
         default:
             return 0
         }
@@ -49,45 +55,43 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch bookingStatusSegmentedControl.selectedSegmentIndex {
         case 0:
-           
-                let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
-            let servant = bookedServant[indexPath.row]
-            servantId = servant.id
-            cell.update(with: servantId)
-            cell.showsReorderControl = true
-                return cell
-        case 1:
-          
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pendingBookingCell", for: indexPath) as! PendingBookTableViewCell
-            cell.delegate = self
-            let servant = requestedServant[indexPath.row]
-            servantId = servant.id
-            cell.update(with: servantId)
-            cell.showsReorderControl = true
-                return cell
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RequestReceivedBookingCell", for: indexPath) as! RequestReceivedTableViewCell
-                let servant = receivedRequestBooking[indexPath.row]
-            servantId = servant.id
-                cell.update(with: servantId)
+            
+            //                let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
+            //            let servant = bookedServant[indexPath.row]
+            //            servantId = servant.id
+            //            cell.update(with: servantId)
+            //            cell.showsReorderControl = true
+            //                return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
+            let confirmedBookings = confirmedBookingsDataModel.getAllConfirmedBookings()
+            
+            if indexPath.row < confirmedBookings.count {
+                let booking = confirmedBookings[indexPath.row]
+                cell.update(booking: booking)
                 cell.showsReorderControl = true
-                    return cell
+                return cell
+            } else {
+                return UITableViewCell()
+            }
+            
+        case 1:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "pendingBookingCell", for: indexPath) as! PendingBookTableViewCell
+            cell.delegate = self
+            let requests = requestsDataModel.getAllRequests()
+            if indexPath.row < requests.count {
+                let request = requests[indexPath.row]
+                cell.update(with: request)
+                cell.showsReorderControl = true
+                return cell
+            }
+            else {
+                return UITableViewCell()
+            }
         default:
             return UITableViewCell()
         }
-        
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let cell = tableView.cellForRow(at: indexPath) as? PendingBookTableViewCell else {
-//              return
-//          }
-//          
-//          let selectedData = // Get the data for the selected cell
-//          
-//          cell.delegate?.didSelectCell(with: selectedData)
-//        }
-    
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         displayRequestSentTable.reloadData()
     }
@@ -99,7 +103,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
         displayRequestSentTable.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
-        bookingStatusSegmentedControl.selectedSegmentIndex = 0
+      //  bookingStatusSegmentedControl.selectedSegmentIndex = 0
         displayRequestSentTable.reloadData()
     }
 
