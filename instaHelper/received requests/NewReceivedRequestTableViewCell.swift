@@ -52,6 +52,10 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
               // Update the booking status to "Accepted"
              residentDataModel.updateBookingStatus(residentID: "M53136", bookingID: self.bookingID!, newStatus: "Accepted")
               print(residentDataModel.getAllResidents())
+              if let tableView = self.superview as? UITableView {
+                          tableView.reloadData()
+                      }
+           
           }
 
           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -69,6 +73,10 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
     @IBAction func requestButtonTapped(_ sender: Any) {
         residentDataModel.updateBookingStatus(residentID: "M53136", bookingID: bookingID!, newStatus: "Cancelled")
         print(residentDataModel.getAllResidents())
+        if let tableView = self.superview as? UITableView {
+                    tableView.reloadData()
+                }
     }
+
     
 }

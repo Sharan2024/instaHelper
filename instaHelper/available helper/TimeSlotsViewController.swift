@@ -71,35 +71,45 @@ class TimeSlotsViewController: UIViewController {
     func createButtons(for servant: Servant) {
            let containerView = UIView()
            containerView.frame = CGRect(x: 0, y: 0, width: buttonScrollView.frame.width, height: buttonScrollView.frame.height)
-
+        
            for (index, timeSlot) in servant.workingTimeSlots.enumerated() {
                let button = UIButton(type: .system)
                button.setTitle("\(timeSlot.startTime) - \(timeSlot.endTime)", for: .normal)
                button.tag = index
                button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+               // Customize button appearance
+                    button.backgroundColor = UIColor.white
+                    button.layer.borderColor = UIColor.black.cgColor
+                    button.layer.borderWidth = 1.0
+                    button.setTitleColor(UIColor.black, for: .normal)
+                    button.setTitleColor(UIColor.blue, for: .selected) // Change to your desired selected color
+                    let buttonWidth: CGFloat = 140.0
+                    let buttonHeight: CGFloat = 60.0 // Adjust the height based on your design
 
-               // Set button frame and add it to the container view
-               button.backgroundColor = UIColor.lightGray
-               button.setTitleColor(UIColor.black, for: .normal)
-               let buttonWidth: CGFloat = 150.0
-               let buttonX = CGFloat(index) * (buttonWidth + 10.0)
-               button.frame = CGRect(x: buttonX, y: 0, width: buttonWidth, height: containerView.frame.height)
-               containerView.addSubview(button)
-           }
+                    let buttonX = CGFloat(index) * (buttonWidth + 10.0)
+                    let buttonY = (containerView.frame.height - buttonHeight) / 2.0
 
+                    button.frame = CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight)
+
+                    containerView.addSubview(button)
+                }
+
+        let reducedScrollViewHeight = buttonScrollView.frame.height - 50.0
+           buttonScrollView.frame = CGRect(x: buttonScrollView.frame.origin.x, y: buttonScrollView.frame.origin.y, width: buttonScrollView.frame.width, height: reducedScrollViewHeight)
+
+           // Customize scroll view appearance
+           buttonScrollView.backgroundColor = UIColor.lightGray
            buttonScrollView.addSubview(containerView)
-           buttonScrollView.contentSize = CGSize(width: CGFloat(servant.workingTimeSlots.count) * (150.0 + 10.0), height: buttonScrollView.frame.height)
+           buttonScrollView.contentSize = CGSize(width: CGFloat(servant.workingTimeSlots.count) * (150.0 + 10.0), height: reducedScrollViewHeight)
+
        }
-    
     @objc func buttonTapped(_ sender: UIButton) {
         let servantIndex = servantID ?? 0
              let timeSlotIndex = sender.tag
-
              guard let selectedServant = servants.first(where: { $0.id == servantIndex }),
                    timeSlotIndex < selectedServant.workingTimeSlots.count else {
                  return
              }
-
              let selectedTimeSlot = selectedServant.workingTimeSlots[timeSlotIndex]
              print("Button tapped for Servant \(servantIndex + 1), House: \(selectedTimeSlot.membershipID)")
 

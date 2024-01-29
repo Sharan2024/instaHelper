@@ -864,54 +864,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "585DC7A1-F4AC-4B66-BDC4-575970F944A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "instaHelper/available helper/TimeSlotsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "TimeSlotsViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "585DC7A1-F4AC-4B66-BDC4-575970F944A5 - d2bb3af451223b6c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "instaHelper.TimeSlotsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "instaHelper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/TimeSlotsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "860">
-               </Location>
-               <Location
-                  uuid = "585DC7A1-F4AC-4B66-BDC4-575970F944A5 - 577ef19db446c119"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (instaHelper.Servant) -&gt; Swift.Bool in instaHelper.TimeSlotsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "instaHelper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/TimeSlotsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1E58B01E-457E-4B29-8DFE-60E8B0BFA1A3"
             shouldBeEnabled = "No"
             ignoreCount = "0"

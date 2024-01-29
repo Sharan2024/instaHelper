@@ -49,7 +49,7 @@ func updateUI()
 
     
     @IBAction func numberOfHoursChanged(_ sender: Any) {
-        hoursLabel.text =   "\(Double(numberOfHoursStepper.value))"
+        hoursLabel.text =   "\(Int(numberOfHoursStepper.value))"
 
     }
     
