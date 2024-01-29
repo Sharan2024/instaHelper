@@ -62,8 +62,6 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
 
           alertController.addAction(acceptAction)
           alertController.addAction(cancelAction)
-
-          // Present the alert
           if let viewController = UIApplication.shared.keyWindow?.rootViewController {
               viewController.present(alertController, animated: true, completion: nil)
           }

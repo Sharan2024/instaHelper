@@ -68,11 +68,8 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
         guard let servantID = id  else {
                     return
                 }
-
-                // Create the alert controller
                 let alertController = UIAlertController(title: "Confirm Booking", message: "Are you sure you want to confirm this booking?", preferredStyle: .alert)
 
-                // Create actions for the alert controller
                 let confirmAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] (action) in
                     self?.handleConfirmation(for: servantID)
                 }

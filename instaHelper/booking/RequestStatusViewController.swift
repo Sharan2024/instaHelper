@@ -50,9 +50,8 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     }
     @objc func showDialog() {
         let alertController = UIAlertController(title: "Confirmation", message: "Your booking has been confirmed", preferredStyle: .alert)
-        // Add actions to the alert controller
         let okAction = UIAlertAction(title: "Done", style: .default) { (action) in
-            // Handle OK button tap if needed
+
         }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)

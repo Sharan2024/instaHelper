@@ -36,7 +36,6 @@ class ConfirmedBookingTableViewCell: UITableViewCell {
     func update(booking: confirmedBookings) {
         
         nameofServantLabel.text = booking.name
-               // Update other labels using the properties of the `confirmedBookings` instance
                serviceLabel.text = "Cook"  // Example value, update accordingly
                locationLabel.text = "📍" + booking.address
                priceOfServiceLabel.text = booking.price

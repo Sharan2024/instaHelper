@@ -39,14 +39,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
             return ConfirmedBookingsDataModel().getAllConfirmedBookings().count
         case 1:
             return requestsDataModel.getAllRequests().count
-//        case 2:
-//            guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
-//                       print("Resident not found.")
-//                       return 0
-//                   }
-//                   
-//                   // Return the number of received bookings for the resident
-//                   return resident.receivedBooking.count
+
         default:
             return 0
         }
