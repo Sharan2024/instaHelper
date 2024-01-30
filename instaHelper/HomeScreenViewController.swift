@@ -21,8 +21,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        HomeButton.backgroundColor = UIColor.lightGray
-               FamilyButton.backgroundColor = UIColor.lightGray
+     //   HomeButton.backgroundColor = UIColor.lightGray
+           //    FamilyButton.backgroundColor = UIColor.lightGray
 
     }
     @IBAction func homeButtonTapped(_ sender: UIButton) {

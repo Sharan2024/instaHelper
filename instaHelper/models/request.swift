@@ -25,9 +25,9 @@ class RequestsDataModel {
     private var requests: [BookingRequested] = []
     init() {
         requests.append(
-            BookingRequested(id: 1, experience: 12, type: .cook, name: "Shabham Javed", dateandTime: "January 20, 2024 10:00", price: "Rs.500", address: "Home", status: "Approved", house: "Anish Gupta", image: "rajni1.jpg"))
+            BookingRequested(id: 5, experience: 12, type: .cook, name: "Shabham Javed", dateandTime: "January 20, 2024 10:00", price: "Rs.500", address: "Home", status: "Approved", house: "Anish Gupta", image: "rajni1.jpg"))
         
-        requests.append(BookingRequested(id: 2, experience: 5, type: .cook, name: "Rajni Rani", dateandTime: "January 20, 2024 10:00", price: "Rs.600", address: "Home", status: "Pending", house: "Vikas Goyal", image: "rajni.jpg"))
+        requests.append(BookingRequested(id: 1, experience: 5, type: .cook, name: "Rajni Rani", dateandTime: "January 20, 2024 10:00", price: "Rs.600", address: "Home", status: "Pending", house: "Vikas Goyal", image: "rajni.jpg"))
     }
     
     func getAllRequests() -> [BookingRequested] {
@@ -49,9 +49,6 @@ struct confirmedBookings {
     var price : String
     var address : String
 }
-
-//let bookedServant = [confirmedBookings(id: 1, type: .cook, name: "Shabham Javed", dateandTime: "January 20 , 2024  10:00", price: "Rs.500", address: "Home") ]
-
 class ConfirmedBookingsDataModel {
     private var confirmBookings: [confirmedBookings] = []
     
