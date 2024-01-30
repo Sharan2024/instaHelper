@@ -23,6 +23,11 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
      //   HomeButton.backgroundColor = UIColor.lightGray
            //    FamilyButton.backgroundColor = UIColor.lightGray
+        
+        HomeButton.layer.cornerRadius = HomeButton.frame.size.width/2
+        HomeButton.clipsToBounds = true
+        FamilyButton.layer.cornerRadius = FamilyButton.frame.size.width/2
+        FamilyButton.clipsToBounds = true
 
     }
     @IBAction func homeButtonTapped(_ sender: UIButton) {
@@ -31,7 +36,9 @@ class HomeScreenViewController: UIViewController {
 
            // Update background color for selected button
            HomeButton.backgroundColor = UIColor.systemBlue
+
            FamilyButton.backgroundColor = UIColor.lightGray
+
        }
 
        // Action when Family button is tapped
