@@ -57,16 +57,16 @@ func updateUI()
        var selectedDate = datePicker.date
       //  print(selectedDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd-MM-YYYY"
         let formattedDate = dateFormatter.string(from: selectedDate)
        // print(formattedDate)
         selectdate = formattedDate
+        print(selectdate)
         let selectedTime = timePicker.date
 
         // Use a DateFormatter to display only the time component
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
-
         let formattedTime = timeFormatter.string(from: selectedTime)
         let offer = offerPriceTextField.text
       availableServants = findAvailableServants(selectedTime: formattedTime, selectedService: service!)
@@ -89,6 +89,8 @@ func updateUI()
         nextVC.avaiableServant = availableServants
         nextVC.date = selectdate
         nextVC.cost = offerPriceTextField.text!
+        nextVC.address = address!
+        
         
     }
     func findAvailableServants(selectedTime: String, selectedService: String) -> [Servant] {

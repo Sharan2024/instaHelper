@@ -8,8 +8,6 @@
 import UIKit
 
 class StatusWiseHelpersTableViewCell: UITableViewCell {
-
-   // @IBOutlet weak var helperImage: UIImageView!
     var id : Int? = 0;
     
     @IBOutlet weak var NameOfServant: UILabel!
@@ -23,49 +21,36 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var confirmButton: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    func update(with servant: Int) {
-         id =  servant
-        NameOfServant.text = requestedServant.first{ $0.id == servant}?.name
-        let experience: Int? = requestedServant.first{ $0.id == servant}?.experience
-        if let experience {
-           ExperienceOfServant.text = String(experience) + " years of experience"
-            print(experience)
+    private var bookingID: Int?
+    func update(with booking: RequestedBookings) {
+        bookingID = booking.id
+        if let servant = servantDataModel.getAllServants().first(where: { $0.id == bookingID }) {
+            NameOfServant.text = servant.name
+            ExperienceOfServant.text = "Experience: \(servant.experience) years"
+                if booking.status == "Approved" {
+                           RequestStatus.text = "Approved"
+                       } else if booking.status == "Not responded" {
+                           RequestStatus.text = "Not responded"
+                           confirmButton.isEnabled = true
+                       } else {
+                           RequestStatus.text = "Approval Pending"
+                           confirmButton.isEnabled = false
+                       }
+                        let imageName = servant.image
+                           helperImage.image = UIImage(named: imageName)
         }
-        let requestStatus = requestedServant.first{ $0.id == servant}?.status
-        let houseOwner = requestedServant.first{ $0.id == servant}?.house
-        if requestStatus == "Approved" {
-            let mergedString = "\(requestStatus ?? "") by \(houseOwner ?? "")"
-            RequestStatus.text = mergedString
-        }
-        if requestStatus == "Pending" {
-           // let mergedString = "\(requestStatus ?? "") by \(houseOwner ?? "")"
-            confirmButton.isEnabled = false
-            RequestStatus.text = "Approval Pending"
-        }
-        let imageName: String? = requestedServant.first{ $0.id == servant }?.image
-        if let imageName {
-            helperImage.image = UIImage(named: imageName)
-        }
-        
-//        dateandTimeLabel.text = receivedRequestBooking.first{ $0.id == servant}?.dateandTime
-//     //   statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
-       
-
-   }
-    
+    }
     @IBAction func confirmButtonTapped(_ sender: Any) {
-        guard let servantID = id  else {
+        guard let servantID = bookingID  else {
                     return
                 }
                 let alertController = UIAlertController(title: "Confirm Booking", message: "Are you sure you want to confirm this booking?", preferredStyle: .alert)
@@ -75,18 +60,27 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
                 }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                 alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
+            alertController.addAction(cancelAction)
                 if let viewController = findViewController() {
                     viewController.present(alertController, animated: true, completion: nil)
                 }
-
-        
     }
     private func handleConfirmation(for servantID: Int) {
-
-           print("Booking confirmed for servant ID: \(servantID)")
-       }
-
+        print("Booking confirmed for servant ID: \(servantID)")
+        guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
+            print("Resident not found for Sharan Sandhu")
+            return
+        }
+        if let requestedBooking = resident.sentRequests.first(where: { $0.id == servantID }) {
+            let confirmedBooking = ConfirmedBookings(id: requestedBooking.id,
+                                                     dateandTime: requestedBooking.dateandTime,
+                                                     price: requestedBooking.price,
+                                                     address: requestedBooking.address)
+            residentDataModel.addConfirmedBooking(resident: resident, confirmed: confirmedBooking)
+            residentDataModel.updateRequestedBookingStatus(residentID: resident.membershipID, bookingID: servantID, newRequestedStatus: "Confirmed")
+            print(residentDataModel.getAllResidents())
+        }
+    }
        private func findViewController() -> UIViewController? {
            var responder: UIResponder? = self
            while let nextResponder = responder?.next {
@@ -100,5 +94,4 @@ class StatusWiseHelpersTableViewCell: UITableViewCell {
     @IBAction func declineButtonTapped(_ sender: Any) {
         
     }
-    
 }

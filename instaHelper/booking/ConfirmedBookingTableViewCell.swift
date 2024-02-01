@@ -30,17 +30,16 @@ class ConfirmedBookingTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    func update(booking: confirmedBookings) {
-        
-        nameofServantLabel.text = booking.name
-               serviceLabel.text = "Cook"  // Example value, update accordingly
-               locationLabel.text = "📍" + booking.address
-               priceOfServiceLabel.text = booking.price
-               dateandTimeLabel.text = booking.dateandTime
-
+    func update(with request: ConfirmedBookings) {
+        if let servant = servants.first(where: { $0.id == request.id }) {
+            nameofServantLabel.text = servant.name
+            serviceLabel.text = servant.type.rawValue
+            locationLabel.text = "📍" + request.address
+            priceOfServiceLabel.text = "Rs. " + request.price
+            dateandTimeLabel.text = request.dateandTime
+        }    else {
+                print("Servant not found for id: \(request.id)")
+            }
    }
-
 }

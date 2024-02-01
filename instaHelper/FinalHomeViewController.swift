@@ -114,10 +114,7 @@ class FinalHomeViewController: UIViewController {
 
        // recentAddress = [newAddress]  // Update the recentAddress array with the new address
 
-        // Save the recentAddress array to the file
         Addresses.saveToFile(addresses: recentAddress)
-
-        // Ensure that the save operation is successful
         if let loadedAddresses = Addresses.loadFromFile() {
             print("Saved addresses: \(recentAddress)")
             print("Loaded addresses: \(loadedAddresses)")

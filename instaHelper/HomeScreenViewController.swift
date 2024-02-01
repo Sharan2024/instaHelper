@@ -23,7 +23,15 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
      //   HomeButton.backgroundColor = UIColor.lightGray
            //    FamilyButton.backgroundColor = UIColor.lightGray
-        
+        cookButton.layer.borderColor = UIColor.gray.cgColor
+        cookButton.layer.borderWidth = 2
+        cookButton.layer.cornerRadius = 10
+        cleanerButton.layer.borderColor = UIColor.gray.cgColor
+        cleanerButton.layer.borderWidth = 2
+        cleanerButton.layer.cornerRadius = 10
+        driverButton.layer.borderColor = UIColor.gray.cgColor
+        driverButton.layer.borderWidth = 2
+        driverButton.layer.cornerRadius = 10
         HomeButton.layer.cornerRadius = HomeButton.frame.size.width/2
         HomeButton.clipsToBounds = true
         FamilyButton.layer.cornerRadius = FamilyButton.frame.size.width/2
@@ -37,7 +45,7 @@ class HomeScreenViewController: UIViewController {
            // Update background color for selected button
            HomeButton.backgroundColor = UIColor.systemBlue
 
-           FamilyButton.backgroundColor = UIColor.lightGray
+        FamilyButton.backgroundColor = UIColor.lightGray
 
        }
 

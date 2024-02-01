@@ -6,14 +6,26 @@
 //
 
 import UIKit
-class PendingBookingsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , YourCellDelegate{
+class PendingBookingsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource , YourCellDelegate{
+
+
     var finaldata = ""
-    func didSelectCell(with data: String) {
-          finaldata = data
+    var finalId = 0
+    func didSelectCell(with data: String, and id: Int) {
+        finaldata = data
+        finalId = id
     }
+    
+   
+    @IBOutlet weak var noMoreRequestsLabel: UILabel!
+    
+    
+    @IBOutlet weak var bookingLabel: UILabel!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? RequestStatusViewController {
             destinationViewController.status = finaldata
+            destinationViewController.helperId = finalId
         }
     }
     var servantId : Int = 1;
@@ -36,53 +48,59 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
        
         switch bookingStatusSegmentedControl.selectedSegmentIndex {
         case 0:
-            return ConfirmedBookingsDataModel().getAllConfirmedBookings().count
+            let confirmedRequests = residentDataModel.getAllResidents()
+                .first { $0.houseOwner == "Sharan Sandhu" }?.confirmed ?? []
+                       return confirmedRequests.count
         case 1:
-            return requestsDataModel.getAllRequests().count
-
+            let pendingRequests = residentDataModel.getAllResidents()
+                           .first { $0.houseOwner == "Sharan Sandhu" }?.sentRequests ?? []
+                       return pendingRequests.count
         default:
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch bookingStatusSegmentedControl.selectedSegmentIndex {
         case 0:
-            
-            //                let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
-            //            let servant = bookedServant[indexPath.row]
-            //            servantId = servant.id
-            //            cell.update(with: servantId)
-            //            cell.showsReorderControl = true
-            //                return cell
+            noMoreRequestsLabel.isHidden = false
             let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
-            let confirmedBookings = confirmedBookingsDataModel.getAllConfirmedBookings()
-            
-            if indexPath.row < confirmedBookings.count {
-                let booking = confirmedBookings[indexPath.row]
-                cell.update(booking: booking)
-                cell.showsReorderControl = true
-                return cell
-            } else {
-                return UITableViewCell()
+            if let chosenResident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) {
+                     let allConfirmedRequests = chosenResident.confirmed
+                     if indexPath.row < allConfirmedRequests.count {
+                         let request = allConfirmedRequests[indexPath.row]
+                         cell.update(with: request)
+                         noMoreRequestsLabel.isHidden = true
+                         cell.showsReorderControl = true
+                         return cell
+                     } else {
+                         noMoreRequestsLabel.isHidden = false
+                     }
             }
+                 return UITableViewCell()
             
         case 1:
-            
+            noMoreRequestsLabel.isHidden = true
             let cell = tableView.dequeueReusableCell(withIdentifier: "pendingBookingCell", for: indexPath) as! PendingBookTableViewCell
-            cell.delegate = self
-            let requests = requestsDataModel.getAllRequests()
-            if indexPath.row < requests.count {
-                let request = requests[indexPath.row]
-                cell.update(with: request)
-                cell.showsReorderControl = true
-                return cell
-            }
-            else {
-                return UITableViewCell()
-            }
+               cell.delegate = self
+                // cell.statusDelegate = self
+               if let chosenResident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) {
+                   let allChosenRequests = chosenResident.sentRequests
+                   
+                   // Filter requests with status "Pending" or "Approved"
+                   let filteredRequests = allChosenRequests.filter { $0.status == "Pending" || $0.status == "Approved" }
+                   if indexPath.row < filteredRequests.count {
+                       let request = filteredRequests[indexPath.row]
+                       cell.update(with: request)
+                       cell.showsReorderControl = true
+                       return cell
+                   } else {
+                       noMoreRequestsLabel.isHidden = false
+                   }
+               }
+               return UITableViewCell()
+
         default:
-            return UITableViewCell()
+                 return UITableViewCell()
         }
     }
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
@@ -92,11 +110,12 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate , UI
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        noMoreRequestsLabel.isHidden = true
         displayRequestSentTable.dataSource =  self
         displayRequestSentTable.delegate = self
     }
+
     override func viewWillAppear(_ animated: Bool) {
-      //  bookingStatusSegmentedControl.selectedSegmentIndex = 0
         displayRequestSentTable.reloadData()
     }
 

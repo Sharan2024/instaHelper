@@ -11,10 +11,13 @@ class AvailableHelperViewController: UIViewController , UITableViewDelegate , UI
     var finalId : Int = 0
     var date : String = ""
     var cost : String = ""
+    var address : String = ""
     func didSelectCell(with data: Int) {
         finalId = data
     }
   
+    @IBOutlet weak var noAvailableHelperLabel: UILabel!
+    
     var avaiableServant : [Servant] = []
     var servant : [Int] = []
    
@@ -24,12 +27,14 @@ class AvailableHelperViewController: UIViewController , UITableViewDelegate , UI
             destinationViewController.servantID = finalId
             destinationViewController.date = date
             destinationViewController.cost = cost
+            destinationViewController.location = address
         }
     }
     @IBOutlet weak var displayHelperTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        servant.count
+       
+        return servant.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,16 +58,20 @@ class AvailableHelperViewController: UIViewController , UITableViewDelegate , UI
         displayHelperTable.delegate = self
         
         
+        
     }
     func updateUI() {
         if !avaiableServant.isEmpty {
-           // print("Available servants:")
+            noAvailableHelperLabel.isHidden = true
             for helper in avaiableServant {
                 
               //  print("Servant ID: \(helper.id), Name: \(helper.name)")
                 servant.append(helper.id)
                 
             }
+        }
+        else {
+            noAvailableHelperLabel.isHidden = false
         }
     }
 

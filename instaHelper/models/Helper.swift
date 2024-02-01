@@ -23,7 +23,7 @@ enum CleaningService: String {
     case washrooms = "Washrooms"
     case basicCleaning = "Basic Cleaning"
     case kitchenCleaning = "Kitchen Cleaning"
-    case gardenCleaning = "Garden Cleaning"
+ //   case gardenCleaning = "Garden Cleaning"
 }
 
 // Enum for driviers
@@ -131,14 +131,14 @@ let servantE = Servant(
     id: 5, type: .cook,
     name: "Shabham", gender: "Female",
     image: "rajni1.jpg",
-    experience: 5,
+    experience: 12,
     rating: 4.5,
     numberOfReviews: 20,
     workingTimeSlots: [
         TimeSlot(startTime: "8:00", endTime: "9:00", membershipID: "M64632"),
         TimeSlot(startTime: "9:00", endTime: "10:00", membershipID: "M53136"),
-        TimeSlot(startTime: "10:00", endTime: "11:00", membershipID: "NA"),
-        TimeSlot(startTime: "11:15", endTime: "12:30", membershipID: "M61464"),
+        TimeSlot(startTime: "10:00", endTime: "12:00", membershipID: "NA"),
+        TimeSlot(startTime: "12:15", endTime: "12:30", membershipID: "M61464"),
         TimeSlot(startTime: "16:00", endTime: "17:00", membershipID: "NA"),
         TimeSlot(startTime: "17:15", endTime: "19:30", membershipID: "M68965"),
        
@@ -146,6 +146,8 @@ let servantE = Servant(
     cookDetails: (.veg, ["Italian", "Indian", "South Indian"])
 )
 let servants : [Servant] = [servantA , servantB , servantC , servantD , servantE]
+
+
 class ServantDataModel {
     private var servants: [Servant] = []
     init() {
@@ -159,7 +161,7 @@ class ServantDataModel {
                 workingTimeSlots: [
                     TimeSlot(startTime: "9:00", endTime: "10:00", membershipID: "M12345"),
                     TimeSlot(startTime: "10:00", endTime: "11:00", membershipID: "NA") ,
-                    TimeSlot(startTime: "11:00", endTime: "12:30", membershipID: "M67834"),
+                    TimeSlot(startTime: "12:00", endTime: "12:30", membershipID: "M67834"),
                     TimeSlot(startTime: "16:30", endTime: "18:00", membershipID: "NA") ,
                     TimeSlot(startTime: "18:15", endTime: "20:30", membershipID: "M67890"),
                 ],
@@ -212,14 +214,14 @@ class ServantDataModel {
         servants.append(Servant(id: 5, type: .cook,
                         name: "Shabham", gender: "Female",
                         image: "rajni1.jpg",
-                        experience: 5,
+                        experience: 12,
                         rating: 4.5,
                         numberOfReviews: 20,
                         workingTimeSlots: [
                             TimeSlot(startTime: "8:00", endTime: "9:00", membershipID: "M64632"),
                             TimeSlot(startTime: "9:00", endTime: "10:00", membershipID: "M53136"),
                             TimeSlot(startTime: "10:00", endTime: "11:00", membershipID: "NA"),
-                            TimeSlot(startTime: "11:15", endTime: "12:30", membershipID: "M61464"),
+                            TimeSlot(startTime: "12:15", endTime: "1:30", membershipID: "M61464"),
                             TimeSlot(startTime: "16:00", endTime: "17:00", membershipID: "NA"),
                             TimeSlot(startTime: "17:15", endTime: "19:30", membershipID: "M68965"),
                         ],

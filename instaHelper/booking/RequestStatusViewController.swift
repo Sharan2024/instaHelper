@@ -13,40 +13,43 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     
     var status : String?
    var finalStatus = ""
-    var approvedRequests: [BookingRequested] = []
+    var helperId = 0;
+    var receivedId : Int = 0;
+    var id : Int?
+    var approvedRequests: [RequestedBookings] = []
 
    // let approvedRequests = requestedServant.filter { $0.status.lowercased() == "approved" }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        approvedRequests.count
+        return approvedRequests.count
     
     }
     func updateApprovedRequests() {
-       approvedRequests = requestedServant.filter { $0.status.lowercased() == finalStatus.lowercased() }
+        guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu"}) else {
+                print("Resident not found.")
+                return
+            }
+        approvedRequests = resident.sentRequests.filter {$0.id == helperId }
        }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RequestStatusCell", for: indexPath) as! StatusWiseHelpersTableViewCell
-        let ids = approvedRequests.map { $0.id }
-     let servant = ids[indexPath.row]
-        
-       cell.update(with: servant)
-        cell.showsReorderControl = true
-
+        let booking = approvedRequests[indexPath.row]
+             cell.update(with: booking)
+             cell.showsReorderControl = true
         return cell
-
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let status {
-            finalStatus = status
+        if let status = status {
+                  finalStatus = status
+              }
+        if let id = id {
+            helperId = id;
         }
-        updateApprovedRequests()
-       displayStatusWiseServantTable.dataSource =  self
-        displayStatusWiseServantTable.delegate = self
-       print(finalStatus)
-        
-
+              updateApprovedRequests()
+              displayStatusWiseServantTable.dataSource = self
+              displayStatusWiseServantTable.delegate = self
+              print(finalStatus)
     }
     @objc func showDialog() {
         let alertController = UIAlertController(title: "Confirmation", message: "Your booking has been confirmed", preferredStyle: .alert)

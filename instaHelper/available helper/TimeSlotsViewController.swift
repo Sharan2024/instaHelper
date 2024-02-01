@@ -12,6 +12,7 @@ class TimeSlotsViewController: UIViewController {
     @IBOutlet weak var NotAvailableStack: UIStackView!
     
     
+    @IBOutlet weak var workingSlotServantLabel: UILabel!
     @IBOutlet weak var askApprovalButton: UIButton!
     
     @IBOutlet weak var houseOwnerDetailedStack: UIStackView!
@@ -30,6 +31,8 @@ class TimeSlotsViewController: UIViewController {
   
     var date = ""
     var cost : String = ""
+    var location : String = ""
+    
     @IBAction func askApprovalButtonTapped(_ sender: Any) {
         guard let servantID = servantID else {
             print("Invalid servantID")
@@ -42,12 +45,13 @@ class TimeSlotsViewController: UIViewController {
             print("previous time : \(previousTimeSlot.startTime)")
             var datetime = date + previousTimeSlot.startTime
             let booking = RecievedBookings(id: selectedServant.id, name: selectedServant.name, RequesterName: "Sharan Sandhu", dateandTime: datetime, cost: cost ,status: "Not Responded")
-            // Send booking request to the resident of the previous working time slot
             if let residentData = getResidentData(forHouseOwner: previousTimeSlot.membershipID) {
                // var updateResidentData = residentData
+                var newSentRequest = RequestedBookings(id: selectedServant.id, dateandTime: date, price: cost, address: location, status: "Pending", house: residentData.houseOwner)
                 residentDataModel.addBooking(resident: residentData, receivedBooking: booking)
+                residentDataModel.addSentRequest(resident: residentDataModel.getAllResidents()[0], sentRequest: newSentRequest)
                 print("Booking request sent to \(residentData.houseOwner)")
-                //print(residentDataModel.getAllResidents())
+                print(residentDataModel.getAllResidents())
                // print(updateResidentData)
             } else {
                 print("Error sending booking request. Resident not found.")
@@ -67,25 +71,30 @@ class TimeSlotsViewController: UIViewController {
         createButtons(for: selectedServant)
         houseOwnerDetailedStack.isHidden = true
         NotAvailableStack.isHidden = true
+        workingSlotServantLabel.text = "Working Slots For " + selectedServant.name
     }
     func createButtons(for servant: Servant) {
            let containerView = UIView()
            containerView.frame = CGRect(x: 0, y: 0, width: buttonScrollView.frame.width, height: buttonScrollView.frame.height)
-        
+        let totalSlots = servant.workingTimeSlots.count
+        let morningColor = UIColor(red: 127/255.0, green: 179/255.0, blue: 221/255.0, alpha: 1.0)
+          let eveningColor = UIColor.systemOrange
            for (index, timeSlot) in servant.workingTimeSlots.enumerated() {
                let button = UIButton(type: .system)
                button.setTitle("\(timeSlot.startTime) - \(timeSlot.endTime)", for: .normal)
+//               let gradientColor = index <= totalSlots / 2 ? morningColor : eveningColor
+//                     button.backgroundColor = gradientColor
                button.tag = index
                button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                // Customize button appearance
-                    button.backgroundColor = UIColor.white
+               button.backgroundColor = UIColor.white
                     button.layer.borderColor = UIColor.black.cgColor
                     button.layer.borderWidth = 1.0
                     button.setTitleColor(UIColor.black, for: .normal)
                     button.setTitleColor(UIColor.blue, for: .selected) // Change to your desired selected color
-                    let buttonWidth: CGFloat = 140.0
-                    let buttonHeight: CGFloat = 60.0 // Adjust the height based on your design
-
+                    let buttonWidth: CGFloat = 120.0
+               let buttonHeight: CGFloat = 60.0 // Adjust the height based on your design
+               button.layer.cornerRadius = 10
                     let buttonX = CGFloat(index) * (buttonWidth + 10.0)
                     let buttonY = (containerView.frame.height - buttonHeight) / 2.0
 
@@ -98,7 +107,13 @@ class TimeSlotsViewController: UIViewController {
            buttonScrollView.frame = CGRect(x: buttonScrollView.frame.origin.x, y: buttonScrollView.frame.origin.y, width: buttonScrollView.frame.width, height: reducedScrollViewHeight)
 
            // Customize scroll view appearance
-           buttonScrollView.backgroundColor = UIColor.lightGray
+        let lighterCyanColor = UIColor(
+            red: CGFloat(210) / 255.0,
+            green: CGFloat(239) / 255.0,
+            blue: CGFloat(253) / 255.0,
+            alpha: 1.0
+        )
+        buttonScrollView.backgroundColor =  lighterCyanColor
            buttonScrollView.addSubview(containerView)
            buttonScrollView.contentSize = CGSize(width: CGFloat(servant.workingTimeSlots.count) * (150.0 + 10.0), height: reducedScrollViewHeight)
 
