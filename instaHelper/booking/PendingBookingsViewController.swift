@@ -22,6 +22,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate, UIT
     
     @IBOutlet weak var bookingLabel: UILabel!
     
+    //here i am assuming user as "Sharan Sandhu" because login part is pending
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? RequestStatusViewController {
             destinationViewController.status = finaldata
@@ -91,7 +92,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate, UIT
                        cell.update(with: request)
                        cell.showsReorderControl = true
                        return cell
-                   } 
+                   }
                }
                return UITableViewCell()
 

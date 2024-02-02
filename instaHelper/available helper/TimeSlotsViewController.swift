@@ -38,8 +38,8 @@ class TimeSlotsViewController: UIViewController {
             print("Invalid servantID")
             return
         }
+        //here i am assuming user as "Sharan Sandhu" because login part is pending
         let selectedServant = servants.first { $0.id == servantID }
-     //   print(selectedServant)
         if let selectedServant = selectedServant,
            let previousTimeSlot = getPreviousWorkingTimeSlot(servant: selectedServant) {
             print("previous time : \(previousTimeSlot.startTime)")
@@ -57,8 +57,6 @@ class TimeSlotsViewController: UIViewController {
 
                             print("Booking request sent to \(residentData.houseOwner)")
                             print(residentDataModel.getAllResidents())
-
-               // print(updateResidentData)
             } else {
                 print("Error sending booking request. Resident not found.")
             }
@@ -88,18 +86,15 @@ class TimeSlotsViewController: UIViewController {
            for (index, timeSlot) in servant.workingTimeSlots.enumerated() {
                let button = UIButton(type: .system)
                button.setTitle("\(timeSlot.startTime) - \(timeSlot.endTime)", for: .normal)
-//               let gradientColor = index <= totalSlots / 2 ? morningColor : eveningColor
-//                     button.backgroundColor = gradientColor
                button.tag = index
                button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-               // Customize button appearance
                button.backgroundColor = UIColor.white
                     button.layer.borderColor = UIColor.black.cgColor
                     button.layer.borderWidth = 1.0
                     button.setTitleColor(UIColor.black, for: .normal)
-                    button.setTitleColor(UIColor.blue, for: .selected) // Change to your desired selected color
+                    button.setTitleColor(UIColor.blue, for: .selected)
                     let buttonWidth: CGFloat = 120.0
-               let buttonHeight: CGFloat = 60.0 // Adjust the height based on your design
+               let buttonHeight: CGFloat = 60.0
                button.layer.cornerRadius = 10
                     let buttonX = CGFloat(index) * (buttonWidth + 10.0)
                     let buttonY = (containerView.frame.height - buttonHeight) / 2.0
@@ -112,7 +107,6 @@ class TimeSlotsViewController: UIViewController {
         let reducedScrollViewHeight = buttonScrollView.frame.height - 50.0
            buttonScrollView.frame = CGRect(x: buttonScrollView.frame.origin.x, y: buttonScrollView.frame.origin.y, width: buttonScrollView.frame.width, height: reducedScrollViewHeight)
 
-           // Customize scroll view appearance
         let lighterCyanColor = UIColor(
             red: CGFloat(210) / 255.0,
             green: CGFloat(239) / 255.0,
@@ -156,11 +150,6 @@ class TimeSlotsViewController: UIViewController {
     func getPreviousWorkingTimeSlot(servant: Servant) -> TimeSlot? {
 
         for timeSlot in servant.workingTimeSlots {
-            //               let startTime = formatter.date(from: timeSlot.startTime) ?? currentDate
-            //               let endTime = formatter.date(from: timeSlot.endTime) ?? currentDate
-            //
-            //               if currentDate >= startTime && currentDate <= endTime {
-            //                   // Current time falls within the time slot, return the previous time slot
             if let index = servant.workingTimeSlots.firstIndex(of: timeSlot), index > 0 {
                 return servant.workingTimeSlots[index - 1]
             }

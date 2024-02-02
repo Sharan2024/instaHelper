@@ -59,10 +59,10 @@ class ReceivedRequestsViewController: UIViewController , UITableViewDelegate , U
        
     }
 
-    private func reloadTableView() {
-            DispatchQueue.main.async {
-                self.displayRequestReceivedTable.reloadData()
-            }
-        }
+//    private func reloadTableView() {
+//            DispatchQueue.main.async {
+//                self.displayRequestReceivedTable.reloadData()
+//            }
+//        }
 
 }

@@ -27,6 +27,7 @@ class RequestReceivedTableViewCell: UITableViewCell {
 
        
     }
+    //here i am assuming user as "Sharan Sandhu" because login part is pending
     func update(with servant: Int) {
         guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
                 print("Resident not found.")

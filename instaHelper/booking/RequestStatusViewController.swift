@@ -17,13 +17,11 @@ class RequestStatusViewController: UIViewController , UITableViewDelegate , UITa
     var receivedId : Int = 0;
     var id : Int?
     var approvedRequests: [RequestedBookings] = []
-
-   // let approvedRequests = requestedServant.filter { $0.status.lowercased() == "approved" }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return approvedRequests.count
     
     }
+    //here i am assuming user as "Sharan Sandhu" because login part is pending
     func updateApprovedRequests() {
         guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu"}) else {
                 print("Resident not found.")
