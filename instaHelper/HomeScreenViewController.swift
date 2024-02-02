@@ -18,7 +18,18 @@ class HomeScreenViewController: UIViewController {
 
     
     var selectedButtonText: String?
-    
+    let lighterOrangeColor = UIColor(
+        red: CGFloat(255) / 255.0,
+        green: CGFloat(149) / 255.0,
+        blue: CGFloat(0) / 255.0,
+        alpha: 1.0
+    )
+    let lighterCyanColor = UIColor(
+        red: CGFloat(127) / 255.0,
+        green: CGFloat(179) / 255.0,
+        blue: CGFloat(221) / 255.0,
+        alpha: 1.0
+    )
     override func viewDidLoad() {
         super.viewDidLoad()
      //   HomeButton.backgroundColor = UIColor.lightGray
@@ -44,8 +55,8 @@ class HomeScreenViewController: UIViewController {
 
            // Update background color for selected button
            HomeButton.backgroundColor = UIColor.systemBlue
-
-        FamilyButton.backgroundColor = UIColor.lightGray
+       
+             FamilyButton.backgroundColor = lighterOrangeColor
 
        }
 
@@ -54,8 +65,8 @@ class HomeScreenViewController: UIViewController {
            // Set selected button text
            selectedButtonText = "Family"
 
-           // Update background color for selected button
-           HomeButton.backgroundColor = UIColor.lightGray
+          
+           HomeButton.backgroundColor = lighterCyanColor
            FamilyButton.backgroundColor = UIColor.systemBlue
        }
     @IBAction func cookTapped(_ sender: UIButton) {

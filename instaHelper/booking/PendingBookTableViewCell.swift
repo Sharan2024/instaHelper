@@ -50,10 +50,23 @@ class PendingBookTableViewCell: UITableViewCell {
       finalId = servant.id
         nameofServantLabel.text = servant.name
         serviceLabel.text = servant.type.rawValue
-        locationLabel.text = "📍" + request.address
+        locationLabel.text =  request.address
         priceOfServiceLabel.text = "Rs. " + request.price
-        dateandTimeLabel.text = request.dateandTime
-
+     var dates = request.dateandTime
+      print(dates)
+      dateandTimeLabel.text = dates
+//      let inputDateFormatter = DateFormatter()
+//      inputDateFormatter.dateFormat = "MMMM dd, yyyy"
+//
+//      if let date = inputDateFormatter.date(from: dates) {
+//          let outputDateFormatter = DateFormatter()
+//          outputDateFormatter.dateFormat = "dd/MM/yyyy"
+//          let formattedDate = outputDateFormatter.string(from: date)
+//          print(formattedDate) // Output: 31/01/2024
+//          dateandTimeLabel.text = formattedDate
+//      } else {
+//          print("Invalid Date")
+//      }
         statusofBookingLabel.text = request.status
         if statusofBookingLabel.text == "Approved" {
             statusofBookingLabel.textColor = .green

@@ -35,7 +35,7 @@ class ConfirmedBookingTableViewCell: UITableViewCell {
         if let servant = servants.first(where: { $0.id == request.id }) {
             nameofServantLabel.text = servant.name
             serviceLabel.text = servant.type.rawValue
-            locationLabel.text = "📍" + request.address
+            locationLabel.text = request.address
             priceOfServiceLabel.text = "Rs. " + request.price
             dateandTimeLabel.text = request.dateandTime
         }    else {

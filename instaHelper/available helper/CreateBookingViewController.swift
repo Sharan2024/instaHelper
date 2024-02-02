@@ -112,6 +112,9 @@ func updateUI()
                 }
         return availableServants
     }
+    @IBAction func returnPressed(_ sender: UITextField) {
+            sender.resignFirstResponder()
+        }
 
     
     

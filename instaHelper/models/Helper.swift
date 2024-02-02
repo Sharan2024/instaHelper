@@ -132,8 +132,8 @@ let servantE = Servant(
     name: "Shabham", gender: "Female",
     image: "rajni1.jpg",
     experience: 12,
-    rating: 4.5,
-    numberOfReviews: 20,
+    rating: 4,
+    numberOfReviews: 5,
     workingTimeSlots: [
         TimeSlot(startTime: "8:00", endTime: "9:00", membershipID: "M64632"),
         TimeSlot(startTime: "9:00", endTime: "10:00", membershipID: "M53136"),

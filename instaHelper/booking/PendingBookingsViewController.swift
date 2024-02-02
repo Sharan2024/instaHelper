@@ -62,7 +62,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch bookingStatusSegmentedControl.selectedSegmentIndex {
         case 0:
-            noMoreRequestsLabel.isHidden = false
+          //  noMoreRequestsLabel.isHidden = false
             let cell = tableView.dequeueReusableCell(withIdentifier: "confirmedBookingCell", for: indexPath) as! ConfirmedBookingTableViewCell
             if let chosenResident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) {
                      let allConfirmedRequests = chosenResident.confirmed
@@ -72,8 +72,6 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate, UIT
                          noMoreRequestsLabel.isHidden = true
                          cell.showsReorderControl = true
                          return cell
-                     } else {
-                         noMoreRequestsLabel.isHidden = false
                      }
             }
                  return UITableViewCell()
@@ -93,9 +91,7 @@ class PendingBookingsViewController: UIViewController , UITableViewDelegate, UIT
                        cell.update(with: request)
                        cell.showsReorderControl = true
                        return cell
-                   } else {
-                       noMoreRequestsLabel.isHidden = false
-                   }
+                   } 
                }
                return UITableViewCell()
 

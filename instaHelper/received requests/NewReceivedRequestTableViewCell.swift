@@ -13,8 +13,10 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateandTimeLabel: UILabel!
     
+    @IBOutlet weak var costLabel: UILabel!
     
     @IBOutlet weak var requesterNameLabel: UILabel!
+    
     
     var bookingID : Int?
    
@@ -36,9 +38,10 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
             let booking = resident.receivedBooking.first { $0.id == servant }
             bookingID = booking?.id
             nameOfServantLabel.text = booking?.name
-            requesterNameLabel.text = "Requested By :" + (booking!.RequesterName)
+        requesterNameLabel.text = "Requested By :" + (booking!.RequesterName)
     
-        dateandTimeLabel.text = booking!.dateandTime + " AM" + " (Rs."+booking!.cost + " )"
+        dateandTimeLabel.text = booking!.dateandTime + " AM"
+        costLabel.text = "Rs. " + booking!.cost
 
      //   statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
        

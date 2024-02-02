@@ -9,9 +9,7 @@ import UIKit
 
 class StatusWiseHelpersTableViewCell: UITableViewCell {
     var id : Int? = 0;
-    
     @IBOutlet weak var NameOfServant: UILabel!
-    
     @IBOutlet weak var ExperienceOfServant: UILabel!
     
     @IBOutlet weak var RequestStatus: UILabel!

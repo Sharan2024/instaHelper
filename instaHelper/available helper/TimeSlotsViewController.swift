@@ -50,8 +50,14 @@ class TimeSlotsViewController: UIViewController {
                 var newSentRequest = RequestedBookings(id: selectedServant.id, dateandTime: date, price: cost, address: location, status: "Pending", house: residentData.houseOwner)
                 residentDataModel.addBooking(resident: residentData, receivedBooking: booking)
                 residentDataModel.addSentRequest(resident: residentDataModel.getAllResidents()[0], sentRequest: newSentRequest)
-                print("Booking request sent to \(residentData.houseOwner)")
-                print(residentDataModel.getAllResidents())
+                let alertController = UIAlertController(title: "Booking Request Sent", message: "Your booking request has been sent to \(residentData.houseOwner).", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(okAction)
+                            present(alertController, animated: true, completion: nil)
+
+                            print("Booking request sent to \(residentData.houseOwner)")
+                            print(residentDataModel.getAllResidents())
+
                // print(updateResidentData)
             } else {
                 print("Error sending booking request. Resident not found.")
