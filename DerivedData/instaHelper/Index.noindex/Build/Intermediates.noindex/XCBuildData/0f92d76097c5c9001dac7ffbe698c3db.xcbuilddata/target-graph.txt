@@ -1,0 +1,3 @@
+Target dependency graph (2 targets)
+Target 'instaHelper' in project 'instaHelper' (no dependencies)
+Target 'instaHelper' in project 'instaHelper' (no dependencies)

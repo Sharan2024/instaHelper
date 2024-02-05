@@ -871,8 +871,8 @@
             filePath = "instaHelper/received requests/NewReceivedRequestTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "acceptButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -1106,8 +1106,8 @@
             filePath = "instaHelper/available helper/AvailableHelperViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1125,6 +1125,147 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "update(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDB7A053-2338-434F-B1BC-F4F829B5C35B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instaHelper/available helper/AvailableHelperTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "update(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AE12776-1FD5-4825-A483-6F92BD5B20B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instaHelper/available helper/AvailableHelperTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "update(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instaHelper/available helper/AvailableHelperTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "AvailableHelperTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6 - 2c19bc68d1e1cb4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "instaHelper.AvailableHelperTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; instaHelper.AvailableHelperTableViewCell"
+                  moduleName = "instaHelper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/AvailableHelperTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6 - f3201e2bbec4a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "instaHelper.AvailableHelperTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; instaHelper.AvailableHelperTableViewCell"
+                  moduleName = "instaHelper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/AvailableHelperTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6 - 50d51c067e165334"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "instaHelper.AvailableHelperTableViewCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;instaHelper.AvailableHelperTableViewCell&gt;"
+                  moduleName = "instaHelper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/AvailableHelperTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6 - 6580747873c1ac49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "instaHelper.AvailableHelperTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;instaHelper.AvailableHelperTableViewCell&gt;"
+                  moduleName = "instaHelper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/AvailableHelperTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "19F1C1A1-7DEE-4A07-8B26-489F6CCB22B6 - f840a18829c71fc7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "instaHelper.AvailableHelperTableViewCell.__deallocating_deinit"
+                  moduleName = "instaHelper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper/available%20helper/AvailableHelperTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A5FCCFB-969E-4E70-801E-9015733B2247"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instaHelper/available helper/AvailableHelperTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "setSelected(_:animated:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

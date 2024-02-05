@@ -10,25 +10,16 @@ import UIKit
 class NewReceivedRequestTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameOfServantLabel: UILabel!
-    
     @IBOutlet weak var dateandTimeLabel: UILabel!
-    
     @IBOutlet weak var costLabel: UILabel!
-    
     @IBOutlet weak var requesterNameLabel: UILabel!
-    
-    
     var bookingID : Int?
-   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-       
     }
     func update(with servant: Int) {
         //here i am assuming user as "Sharan Sandhu" because login part is pending
@@ -43,10 +34,6 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
     
         dateandTimeLabel.text = booking!.dateandTime + " AM"
         costLabel.text = "Rs. " + booking!.cost
-
-     //   statusofBookingLabel.text = requestedServant.first{ $0.id == servant}?.status
-       
-
    }
     
     @IBAction func acceptButtonTapped(_ sender: Any) {
@@ -59,9 +46,7 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
               if let tableView = self.superview as? UITableView {
                           tableView.reloadData()
                       }
-           
           }
-
           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
           alertController.addAction(acceptAction)
@@ -69,16 +54,13 @@ class NewReceivedRequestTableViewCell: UITableViewCell {
           if let viewController = UIApplication.shared.keyWindow?.rootViewController {
               viewController.present(alertController, animated: true, completion: nil)
           }
-    
     }
     
     @IBAction func requestButtonTapped(_ sender: Any) {
         residentDataModel.updateBookingStatus(residentID: "M53136", bookingID: bookingID!, newStatus: "Cancelled")
         print(residentDataModel.getAllResidents())
         if let tableView = self.superview as? UITableView {
-                    tableView.reloadData()
-                }
+            tableView.reloadData()
+        }
     }
-
-    
 }

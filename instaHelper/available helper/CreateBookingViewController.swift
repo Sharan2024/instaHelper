@@ -12,59 +12,34 @@ class CreateBookingViewController: UIViewController {
     var address : String?
    var availableServants : [Servant] = []
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var timePicker: UIDatePicker!
-    
     @IBOutlet weak var hoursLabel: UILabel!
-    
     @IBOutlet weak var numberOfHoursStepper: UIStepper!
-    
     @IBOutlet weak var offerPriceTextField: UITextField!
     var selectdate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     updateUI()
-      
+        updateUI()
     }
-    
-func updateUI()
-    {
-        if let service  = service {
+func updateUI() {   if let service  = service {
             print("Service is\(service)")
         }
         if let address  = address {
             print("Address is\(address)")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
     @IBAction func numberOfHoursChanged(_ sender: Any) {
         hoursLabel.text =   "\(Int(numberOfHoursStepper.value))"
-
     }
-    
     @IBAction func findHelperButtonTapper(_ sender: Any) {
        var selectedDate = datePicker.date
-      //  print(selectedDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-YYYY"
         let formattedDate = dateFormatter.string(from: selectedDate)
-       // print(formattedDate)
         selectdate = formattedDate
         print(selectdate)
         let selectedTime = timePicker.date
-
-        // Use a DateFormatter to display only the time component
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
         let formattedTime = timeFormatter.string(from: selectedTime)
@@ -75,13 +50,10 @@ func updateUI()
             for servant in availableServants {
                 
                 print("Servant ID: \(servant.id), Name: \(servant.name)")
-                
             }
         } else {
             print("No available servants for the selected time and service.")
         }
-        
-    
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let nextVC = segue.destination as! AvailableHelperViewController
@@ -90,8 +62,6 @@ func updateUI()
         nextVC.date = selectdate
         nextVC.cost = offerPriceTextField.text!
         nextVC.address = address!
-        
-        
     }
     func findAvailableServants(selectedTime: String, selectedService: String) -> [Servant] {
         var availableServants: [Servant] = []
@@ -113,9 +83,6 @@ func updateUI()
         return availableServants
     }
     @IBAction func returnPressed(_ sender: UITextField) {
-            sender.resignFirstResponder()
-        }
-
-    
-    
+        sender.resignFirstResponder()
+    }
 }

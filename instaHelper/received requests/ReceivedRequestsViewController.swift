@@ -8,18 +8,20 @@
 import UIKit
 
 class ReceivedRequestsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
-    
-    
-    
     @IBOutlet weak var noPendingRequestLabel: UILabel!
-    
     @IBOutlet weak var displayRequestReceivedTable: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        noPendingRequestLabel.isHidden = true
+        displayRequestReceivedTable.dataSource =  self
+        displayRequestReceivedTable.delegate = self
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let resident = residentDataModel.getAllResidents().first(where: { $0.houseOwner == "Sharan Sandhu" }) else {
                    print("Resident not found.")
                    return 0
                }
-               
         let count = resident.receivedBooking.count
        
                return count
@@ -30,11 +32,9 @@ class ReceivedRequestsViewController: UIViewController , UITableViewDelegate , U
                return UITableViewCell()
            }
            let receivedBookings = resident.receivedBooking
-
            guard indexPath.row < receivedBookings.count else {
                return UITableViewCell()
            }
-           
            let cell = tableView.dequeueReusableCell(withIdentifier: "RequestReceivedCell", for: indexPath) as! NewReceivedRequestTableViewCell
            let receivedBooking = receivedBookings[indexPath.row]
                if resident.houseOwner == "Sharan Sandhu" && receivedBooking.status == "Not responded" {
@@ -45,24 +45,6 @@ class ReceivedRequestsViewController: UIViewController , UITableViewDelegate , U
                    cell.isHidden = true
                    noPendingRequestLabel.isHidden = false
                }
-
                    return cell
     }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        noPendingRequestLabel.isHidden = true
-        displayRequestReceivedTable.dataSource =  self
-        displayRequestReceivedTable.delegate = self
-        // Do any additional setup after loading the view.
-       
-    }
-
-//    private func reloadTableView() {
-//            DispatchQueue.main.async {
-//                self.displayRequestReceivedTable.reloadData()
-//            }
-//        }
-
 }

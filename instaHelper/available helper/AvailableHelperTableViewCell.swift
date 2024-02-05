@@ -16,18 +16,11 @@ class AvailableHelperTableViewCell: UITableViewCell {
     weak var delegate: DetailsDelegate?
     
     @IBOutlet weak var helperImage: UIImageView!
-    
     @IBOutlet weak var experienceofHelper: UILabel!
-    
     @IBOutlet weak var nameofHelper: UILabel!
-    
     @IBOutlet weak var genderofHelper: UILabel!
-    
     @IBOutlet weak var ratingHelper: UILabel!
-    
-    
     @IBOutlet weak var reviewsOfHelper: UILabel!
-    
     var servantId = 0;
     
     override func awakeFromNib() {
@@ -40,7 +33,6 @@ class AvailableHelperTableViewCell: UITableViewCell {
      print("Delegate \(servantId)")
         delegate?.didSelectCell(with: servantId)
     }
-   
  func update(with servant: Int) {
      servantId = servant
      nameofHelper.text = servants.first{ $0.id == servant}?.name
@@ -74,20 +66,5 @@ class AvailableHelperTableViewCell: UITableViewCell {
        genderofHelper.text = String(gender)
          print(gender)
      }
-
 }
-   
-//    @IBAction func viewScheduleButtonTapped(_ sender: Any) {
-//        
-//       print("view schedule")
-//    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//       let viewVC = segue.destination as! TimeSlotsViewController
-//    guard let sender = sender as? UIButton else {return}
-//       // viewVC.servantID = servantId
-//        
-//    }
-    
-    
-
 }

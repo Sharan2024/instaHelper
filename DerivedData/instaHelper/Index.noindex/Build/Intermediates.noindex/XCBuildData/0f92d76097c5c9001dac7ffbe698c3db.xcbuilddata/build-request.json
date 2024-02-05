@@ -1,0 +1,59 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "0393b51e1e969353817ff864d5dc745557891ddc4a6b9ebe1efce5b5a49215fa"
+    }
+  ],
+  "containerPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/instaHelper.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator17.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Build/Products",
+      "pchPath" : "/Users/sharanjitkaur/Documents/GitHub/instaHelper/DerivedData/instaHelper/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
